@@ -6,7 +6,7 @@
    <title>LVWebsite - Main Page</title>
    <style>
     body {
-     background: url('/images/sky.png') no-repeat center center fixed;
+     background: url('images/sky.png') no-repeat center center fixed;
      background-size: cover;
      color: white;
     text-shadow: 1px 1px 3px black;
@@ -22,11 +22,11 @@ let night=false;
 btn.onclick = ()=>{
   night = !night;
   if(night){
-    document.body.style.background = "url('/images/night_sky.png') no-repeat center center fixed";
+    document.body.style.background = "url('images/night_sky.png') no-repeat center center fixed";
     document.body.style.backgroundSize = "cover";
     btn.textContent = "Day Mode";
   } else {
-    document.body.style.background = "url('/images/sky.png') no-repeat center center fixed";
+    document.body.style.background = "url('images/sky.png') no-repeat center center fixed";
     document.body.style.backgroundSize = "cover";
     btn.textContent = "Night Mode";
   }
@@ -45,7 +45,7 @@ window.addEventListener('resize', resize);
 resize();
 
 const logoImg = new Image();
-logoImg.src = '/images/dvd.png'; // Make sure dvd.png is in the same folder as index.html
+logoImg.src = 'images/dvd.png'; // Make sure dvd.png is in the same folder as index.html
 
 const logo = { vx: 3 + Math.random()*2, vy: 3 + Math.random()*2, w: 100, h: 50 };
 
