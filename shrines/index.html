@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width,initial-scale=1" />
-   <title>LVWebsite - Main Page</title>
-   <style>
-    body {
-    background: url('images/sky.png') no-repeat center center fixed;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LVWebsite - Shrine List</title>
+  <style>
+   body {
+    background: url('https://github.com/Baller300000/LVWebsite/images/sky.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     text-shadow: 1px 1px 3px black;
@@ -17,7 +17,7 @@
     pointer-events: none;
     z-index: 9999;
     mix-blend-mode: normal;
-    opacity: 0.9; 
+    opacity: 0.9;
    .crt-overlay::before {
     content: "";
     position: absolute;
@@ -37,7 +37,7 @@
     position: absolute;
     inset: 0;
     background:
-    radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.15) 70%, rgba(0,0,0,0.45) 100%);
+    radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,>
     mix-blend-mode: multiply;
     pointer-events: none;
     filter: blur(0.2px);
@@ -45,18 +45,18 @@
 </style>
 </head>
 <body>
-<button id="toggle" style="position:fixed;top:10px;right:10px;z-index:999;padding:8px 12px;">Night Mode</button>
+<button id="toggle" style="position:fixed;top:10px;right:10px;z-index:999;p>
 <script>
 const btn = document.getElementById('toggle');
 let night=false;
 btn.onclick = ()=>{
   night = !night;
   if(night){
-    document.body.style.background = "url('images/night_sky.png') no-repeat center center fixed";
+    document.body.style.background = "url('https://github.com/Baller300000/LVWebsite/images/night_sky.png') no-repeat>
     document.body.style.backgroundSize = "cover";
     btn.textContent = "Day Mode";
   } else {
-    document.body.style.background = "url('images/sky.png') no-repeat center center fixed";
+    document.body.style.background = "url('https://github.com/Baller300000/LVWebsite/images/sky.png') no-repeat cente>
     document.body.style.backgroundSize = "cover";
     btn.textContent = "Night Mode";
   }
@@ -75,9 +75,9 @@ window.addEventListener('resize', resize);
 resize();
 
 const logoImg = new Image();
-logoImg.src = 'images/dvd_v2.png'; // Make sure dvd.png is in the same folder as index.html
+logoImg.src = 'https://github.com/Baller300000/LVWebsite/images/dvd_v2.png'; // Make sure dvd.png is in the same fold>
 
-const logo = { vx: 3 + Math.random()*2, vy: 3 + Math.random()*2, w: 100, h: 50 };
+const logo = { vx: 3 + Math.random()*2, vy: 3 + Math.random()*2, w: 100, h:>
 
 // Center the logo once the canvas is ready
 function centerLogo() {
@@ -89,10 +89,11 @@ window.addEventListener('resize', centerLogo);
 
 function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  if(logoImg.complete) ctx.drawImage(logoImg, logo.x, logo.y, logo.w, logo.h);
+  if(logoImg.complete) ctx.drawImage(logoImg, logo.x, logo.y, logo.w, logo.>
 
   logo.x += logo.vx;
   logo.y += logo.vy;
+
 
   if(logo.x <= 0 || logo.x + logo.w >= canvas.width) logo.vx *= -1;
   if(logo.y <= 0 || logo.y + logo.h >= canvas.height) logo.vy *= -1;
@@ -101,19 +102,11 @@ function draw(){
 }
 draw();
 </script>
-   <h1>Hello!</hi>
-   <h2>Welcome to my website!</h2>
-   <div id="intro">
-   <h3>This is my little personal website, where i upload stuff.<br> 
-      It's basically my little interconnected website with random things!<br>
-      More content coming soon!</h3>
-   <h2>Stuff I made:</h2>
-   <ul>
-    <li><a href="cool-symbols.html">Cool Symbols</a></li>
-    <li><a href="games/tetris.html">Tetris</a></li>
-    <li><a href="games/snake.html">Snake</a></li>
-    <li><a href="shrines/index.html">Shrine List</a></li>
-    <li>More stuff coming soon!</li>
-   </div>
+<h1>Hello (again) !</h1>
+<h2>This is where i place shrines, one for each thing in my life i like</h2>
+<h2>The shrines are listed below:</h2>
+<ul>
+  <li>None yet, but expect some soon!</li>
+</ul>
 </body>
 </html>
