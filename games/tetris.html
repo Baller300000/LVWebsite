@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tetris Game</title>
+<style>
+body {
+  background: url('images/sky.png') no-repeat center center fixed;
+  background-size: cover;
+  text-align:center;
+  font-family:sans-serif;
+  color:white;
+}
+canvas { border:2px solid #222; display:block; margin:0 auto; background:#000; }
+button { margin-top:10px; padding:6px 12px; }
+</style>
+</head>
+<body>
+
+<h1>Tetris Game</h1>
+<div>
+  <button id="tetrisRestart">Restart Tetris</button>
+  <span style="margin-left:12px;">Score: <span id="tetrisScore">0</span></span>
+</div>
+<canvas id="tetrisCanvas" width="240" height="400"></canvas>
+<a href="index.html" style="display:block;margin-top:20px;color:white;">⬅ Back</a>
+
+<script>
+(() => {
+const canvas = document.getElementById('tetrisCanvas');
+const ctx = canvas.getContext('2d');
+const cols=10, rows=20, block=20;
+canvas.width=cols*block; canvas.height=rows*block;
+const colors=['cyan','blue','orange','yellow','green','purple','red'];
+
+let board, current, nextPiece, score, dropTimer, running;
+
+const pieces = {
+  I:[[1,1,1,1]], J:[[1,0,0],[1,1,1]], L:[[0,0,1],[1,1,1]],
+  O:[[1,1],[1,1]], S:[[0,1,1],[1,1,0]], T:[[0,1,0],[1,1,1]],
+  Z:[[1,1,0],[0,1,1]]
+};
+
+function emptyBoard(){ return Array.from({length:rows},()=>Array(cols).fill(0)); }
+function randPiece(){ const keys=Object.keys(pieces); const k=keys[Math.floor(Math.random()*keys.length)]; return {shape:pieces[k].map(r=>r.slice()),color:colors[keys.indexOf(k)]}; }
+function rotate(m){ const N=m.length, out=Array.from({length:N},()=>Array(N).fill(0)); for(let y=0;y<N;y++) for(let x=0;x<N;x++) out[x][N-1-y]=m[y][x]||0; return out; }
+function collide(b,p,ox=0,oy=0){ const m=p.shape; for(let y=0;y<m.length;y++) for(let x=0;x<m[y].length;x++){ if(!m[y][x]) continue; const bx=p.x+x+ox, by=p.y+y+oy; if(bx<0||bx>=cols||by>=rows) return true; if(by>=0 && b[by][bx]) return true; } return false; }
+function merge(b,p){ const m=p.shape; for(let y=0;y<m.length;y++) for(let x=0;x<m[y].length;x++) if(m[y][x] && p.y+y>=0) b[p.y+y][p.x+x]=p.color; }
+function clearLines(){ let lines=0; outer: for(let y=rows-1;y>=0;y--){ for(let x=0;x<cols;x++) if(!board[y][x]) continue outer; board.splice(y,1); board.unshift(Array(cols).fill(0)); lines++; y++; } if(lines>0) score+=lines*100; document.getElementById('tetrisScore').textContent=score; }
+function spawn(){ current=nextPiece||randPiece(); nextPiece=randPiece(); current.x=Math.floor((cols-current.shape[0].length)/2); current.y=-1; if(collide(board,current)) running=false; }
+
+function drawCell(x,y,c){ ctx.fillStyle=c||'#111'; ctx.fillRect(x*block,y*block,block-1,block-1); }
+function draw(){ ctx.fillStyle='#000'; ctx.fillRect(0,0,canvas.width,canvas.height); for(let y=0;y<rows;y++) for(let x=0;x<cols;x++) if(board[y][x]) drawCell(x,y,board[y][x]); if(current){ const m=current.shape; for(let y=0;y<m.length;y++) for(let x=0;x<m[y].length;x++) if(m[y][x]) drawCell(current.x+x,current.y+y,current.color); } }
+function drop(){ if(!current) return; if(!collide(board,current,0,1)) current.y++; else{ merge(board,current); clearLines(); score+=10; document.getElementById('tetrisScore').textContent=score; spawn(); } draw(); }
+
+function move(dx){ if(current && !collide(board,current,dx,0)) current.x+=dx; draw(); }
+function rotatePiece(){ if(current){ const rotated=rotate(current.shape); const oldShape=current.shape; current.shape=rotated; if(collide(board,current)) current.shape=oldShape; draw(); } }
+function hardDrop(){ if(!current) return; while(!collide(board,current,0,1)) current.y++; drop(); }
+
+function start(){
+  board=emptyBoard(); score=0; running=true; document.getElementById('tetrisScore').textContent=score;
+  spawn();
+  if(dropTimer) clearInterval(dropTimer);
+  dropTimer=setInterval(()=>{ if(running) drop(); },500);
+}
+
+window.addEventListener('keydown',e=>{
+  if(!running) return;
+  switch(e.keyCode){
+    case 37: move(-1); break;
+    case 39: move(1); break;
+    case 40: drop(); break;
+    case 38: rotatePiece(); break;
+    case 32: hardDrop(); break;
+  }
+});
+
+document.getElementById('tetrisRestart').addEventListener('click',start);
+start();
+})();
+</script>
+
+</body>
+</html>
