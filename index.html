@@ -15,59 +15,30 @@
 
 </head>
 <body>
-<canvas id="dvdCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;"></canvas>
+<canvas id="dvdCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
 <script>
 const canvas = document.getElementById('dvdCanvas');
 const ctx = canvas.getContext('2d');
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resize);
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+window.addEventListener('resize',resize);
 resize();
 
-// Load DVD logo image
 const logoImg = new Image();
-logoImg.src = 'dvd.png'; // Put dvd.png in the same folder as index.html
+logoImg.src = 'dvd.png'; // make sure dvd.png is in the same folder
 
-const logo = { 
-  x: Math.random()*canvas.width,
-  y: Math.random()*canvas.height,
-  w: 100,
-  h: 50,
-  vx: 3,
-  vy: 3,
-  color: '#ffffff' // fallback color in case image doesn't load
-};
+const logo={x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,vx:3+Math.random()*2,vy:3+Math.random()*2};
 
-function randomColor() {
-  return '#' + Math.floor(Math.random()*16777215).toString(16);
-}
+function logoSize(){logo.w=Math.min(100,canvas.width/10);logo.h=Math.min(50,canvas.height/10);}
+logoSize();
+window.addEventListener('resize',logoSize);
 
-function draw() {
+function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  if (logoImg.complete) {
-    ctx.drawImage(logoImg, logo.x, logo.y, logo.w, logo.h);
-  } else {
-    ctx.fillStyle = logo.color;
-    ctx.fillRect(logo.x, logo.y, logo.w, logo.h);
-  }
-
-  logo.x += logo.vx;
-  logo.y += logo.vy;
-
-  // Bounce off walls
-  if(logo.x <= 0 || logo.x + logo.w >= canvas.width){
-    logo.vx *= -1;
-    logo.color = randomColor();
-  }
-  if(logo.y <= 0 || logo.y + logo.h >= canvas.height){
-    logo.vy *= -1;
-    logo.color = randomColor();
-  }
-
+  if(logoImg.complete) ctx.drawImage(logoImg,logo.x,logo.y,logo.w,logo.h);
+  logo.x+=logo.vx; logo.y+=logo.vy;
+  if(logo.x<=0||logo.x+logo.w>=canvas.width) logo.vx*=-1;
+  if(logo.y<=0||logo.y+logo.h>=canvas.height) logo.vy*=-1;
   requestAnimationFrame(draw);
 }
 draw();
