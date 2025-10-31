@@ -37,25 +37,36 @@ btn.onclick = ()=>{
 const canvas = document.getElementById('dvdCanvas');
 const ctx = canvas.getContext('2d');
 
-function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
-window.addEventListener('resize',resize);
+function resize(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
 resize();
 
 const logoImg = new Image();
-logoImg.src = 'dvd.png';
+logoImg.src = 'dvd.png'; // Make sure dvd.png is in the same folder as index.html
 
-const logo={x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,vx:3+Math.random()*2,vy:3+Math.random()*2};
+const logo = { vx: 3 + Math.random()*2, vy: 3 + Math.random()*2, w: 100, h: 50 };
 
-function logoSize(){logo.w=Math.min(100,canvas.width/10);logo.h=Math.min(50,canvas.height/10);}
-logoSize();
-window.addEventListener('resize',logoSize);
+// Center the logo once the canvas is ready
+function centerLogo() {
+  logo.x = (canvas.width - logo.w) / 2;
+  logo.y = (canvas.height - logo.h) / 2;
+}
+centerLogo();
+window.addEventListener('resize', centerLogo);
 
 function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  if(logoImg.complete) ctx.drawImage(logoImg,logo.x,logo.y,logo.w,logo.h);
-  logo.x+=logo.vx; logo.y+=logo.vy;
-  if(logo.x<=0||logo.x+logo.w>=canvas.width) logo.vx*=-1;
-  if(logo.y<=0||logo.y+logo.h>=canvas.height) logo.vy*=-1;
+  if(logoImg.complete) ctx.drawImage(logoImg, logo.x, logo.y, logo.w, logo.h);
+
+  logo.x += logo.vx;
+  logo.y += logo.vy;
+
+  if(logo.x <= 0 || logo.x + logo.w >= canvas.width) logo.vx *= -1;
+  if(logo.y <= 0 || logo.y + logo.h >= canvas.height) logo.vy *= -1;
+
   requestAnimationFrame(draw);
 }
 draw();
