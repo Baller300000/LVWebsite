@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBC News Feed</title>
+  <style>
+    /* Body background and text styling */
+    body {
+      background: url('images/sky.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      font-family: sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Links */
+    a {
+      color: #ffd700; /* gold links for contrast */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Dropdown */
+    select {
+      margin-bottom: 20px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    /* News articles */
+    article {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 10px;
+    }
+
+    h3 { margin: 0; }
+    small { color: #ddd; }
+  </style>
+</head>
+<body>
+  <h1>BBC News</h1>
+
+  <label for="category">Choose category:</label>
+  <select id="category">
+    <option value="https://feeds.bbci.co.uk/news/rss.xml">All News</option>
+    <option value="https://feeds.bbci.co.uk/news/world/rss.xml">World</option>
+    <option value="https://feeds.bbci.co.uk/news/uk/rss.xml">UK</option>
+    <option value="https://feeds.bbci.co.uk/news/technology/rss.xml">Technology</option>
+    <option value="https://feeds.bbci.co.uk/news/business/rss.xml">Business</option>
+    <option value="https://feeds.bbci.co.uk/news/science_and_environment/rss.xml">Science & Environment</option>
+  </select>
+
+  <div id="news-feed">Loading news...</div>
+
+  <script>
+    const container = document.getElementById("news-feed");
+    const select = document.getElementById("category");
+
+    async function loadNews(feedUrl) {
+      container.innerHTML = "Loading news...";
+      try {
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`);
+        const data = await res.json();
+        container.innerHTML = "";
+        data.items.forEach(item => {
+          const article = document.createElement("article");
+          article.innerHTML = `
+            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+            <p>${item.description}</p>
+            <small>${new Date(item.pubDate).toLocaleString()}</small>
+          `;
+          container.appendChild(article);
+        });
+      } catch (err) {
+        container.innerHTML = "Failed to load news.";
+        console.error(err);
+      }
+    }
+
+    // Initial load
+    loadNews(select.value);
+
+    // Load when dropdown changes
+    select.addEventListener("change", () => loadNews(select.value));
+  </script>
+</body>
+</html>
