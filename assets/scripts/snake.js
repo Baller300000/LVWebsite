@@ -1,0 +1,61 @@
+(() => {
+    const canvas = document.getElementById('snakeCanvas');
+    const ctx = canvas.getContext('2d');
+    const scale = 18;
+    const cols = canvas.width / scale;
+    const rows = canvas.height / scale;
+
+    let snake, dir, food, score, running, tick;
+
+    function init() {
+        snake = [{ x: Math.floor(cols / 2), y: Math.floor(rows / 2) }];
+        dir = { x: 1, y: 0 };
+        placeFood();
+        score = 0;
+        running = true;
+        document.getElementById('snakeScore').textContent = score;
+        if (tick) clearInterval(tick);
+        tick = setInterval(loop, 110);
+    }
+
+    function placeFood() {
+        do {
+            food = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+        } while (snake.some(s => s.x === food.x && s.y === food.y));
+    }
+
+    function loop() {
+        if (!running) return;
+        const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+        head.x = (head.x + cols) % cols;
+        head.y = (head.y + rows) % rows;
+        if (snake.some(s => s.x === head.x && s.y === head.y)) { running = false; draw(); return; }
+        snake.unshift(head);
+        if (head.x === food.x && head.y === food.y) { score++; document.getElementById('snakeScore').textContent = score; placeFood(); }
+        else snake.pop();
+        draw();
+    }
+
+    function draw() {
+        ctx.fillStyle = '#f6f6f6'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#d9534f'; ctx.fillRect(food.x * scale, food.y * scale, scale, scale);
+        ctx.fillStyle = '#2c3e50';
+        snake.forEach(s => ctx.fillRect(s.x * scale, s.y * scale, scale - 1, scale - 1));
+        if (!running) {
+            ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+            ctx.fillStyle = 'white'; ctx.font = '20px sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('Game Over — press Restart', canvas.width / 2, canvas.height / 2 + 7);
+        }
+    }
+
+    window.addEventListener('keydown', e => {
+        const k = e.key;
+        if (k === 'ArrowUp' || k === 'w') { if (dir.y !== 1) dir = { x: 0, y: -1 }; }
+        if (k === 'ArrowDown' || k === 's') { if (dir.y !== -1) dir = { x: 0, y: 1 }; }
+        if (k === 'ArrowLeft' || k === 'a') { if (dir.x !== 1) dir = { x: -1, y: 0 }; }
+        if (k === 'ArrowRight' || k === 'd') { if (dir.x !== -1) dir = { x: 1, y: 0 }; }
+    });
+
+    document.getElementById('snakeRestart').addEventListener('click', init);
+    init();
+})();

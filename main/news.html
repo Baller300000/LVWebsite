@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Lambros Vyssoulis">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Lambros Vyssoulis, LVWebsite">
+  <title>LVWebsite - News Feed</title>
+  <link rel="stylesheet" href="../assets/css-stuff/news.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+  <script src="../assets/scripts/statistics.js"></script>
+  <noscript>
+    <img src="https://statinside.com/pixel.png?id=37" referrerpolicy="unsafe-url">
+  </noscript>
+</head>
+
+<body>
+  <h1>BBC News</h1>
+  <h2>Click <a href="../index.html">Here</a> to go back</h2>
+  <label for="category">Choose category:</label>
+  <select id="category">
+    <option value="https://feeds.bbci.co.uk/news/rss.xml">All News</option>
+    <option value="https://feeds.bbci.co.uk/news/world/rss.xml">World</option>
+    <option value="https://feeds.bbci.co.uk/news/europe/rss.xml">Europe</option>
+    <option value="https://feeds.bbci.co.uk/news/technology/rss.xml">Technology</option>
+    <option value="https://feeds.bbci.co.uk/news/business/rss.xml">Business</option>
+    <option value="https://feeds.bbci.co.uk/news/science_and_environment/rss.xml">Science</option>
+  </select>
+
+  <div id="news-feed">Loading news...</div>
+
+  <script src="../assets/scripts/news.js"></script>
+</body>
+
+</html>
