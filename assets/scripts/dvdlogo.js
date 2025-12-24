@@ -32,7 +32,7 @@ if (month === 11 && date >= 1 && date <= 30) {
     logoImg.src = 'assets/seasonal/spiderweb.avif';
 } else if (month === 1 && date === 14) {
     // Valentine's Day (Feb 14)
-    logoImg.src = 'assets/images/valentine.avif';
+    logoImg.src = 'assets/images/val.avif';
 } else {
     // Default Logic
     logoImg.src = 'assets/images/dvd.avif';
