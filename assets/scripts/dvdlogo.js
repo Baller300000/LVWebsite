@@ -25,18 +25,22 @@ const month = today.getMonth(); //11=Dec
 const date = today.getDate();
 
 if (month === 11 && date >= 1 && date <= 30) {
-    // Christmas Logic (Dec 20 - 30)
+    // Christmas Logic (Dec 1 - 30)
     logoImg.src = 'assets/seasonal/ch.gif';
 } else if (month === 9 && date >= 25 && date <= 31) {
     // Halloween Logic (Oct 25 - 31)
     logoImg.src = 'assets/seasonal/spiderweb.avif';
 } else if (month === 1 && date === 14) {
     // Valentine's Day (Feb 14)
-    logoImg.src = 'assets/images/val.avif';
+    logoImg.src = 'assets/seasonal/val.avif';
+} else if (month === 3 && date === 1) {
+    // Teapot Logic (April 1)
+    logoImg.src = 'assets/seasonal/teapot.png';
 } else {
     // Default Logic
     logoImg.src = 'assets/images/dvd.avif';
 }
+
 
 logoImg.onload = () => {
     const aspectRatio = logoImg.naturalHeight / logoImg.naturalWidth;
