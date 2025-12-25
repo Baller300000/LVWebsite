@@ -8,7 +8,6 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-
 const logo = {
     vx: 3 + Math.random() * 2,
     vy: 3 + Math.random() * 2,
@@ -19,28 +18,22 @@ const logo = {
 };
 
 const logoImg = new Image();
-
 const today = new Date();
-const month = today.getMonth(); //11=Dec
+const month = today.getMonth(); // 0=Jan, 11=Dec
 const date = today.getDate();
 
+// Seasonal image logic (month is 0-indexed)
 if (month === 11 && date >= 1 && date <= 30) {
-    // Christmas Logic (Dec 1 - 30)
     logoImg.src = 'assets/seasonal/ch.gif';
 } else if (month === 9 && date >= 25 && date <= 31) {
-    // Halloween Logic (Oct 25 - 31)
     logoImg.src = 'assets/seasonal/spiderweb.avif';
 } else if (month === 1 && date === 14) {
-    // Valentine's Day (Feb 14)
     logoImg.src = 'assets/seasonal/val.avif';
 } else if (month === 3 && date === 1) {
-    // Teapot Logic (April 1)
     logoImg.src = 'assets/seasonal/teapot.png';
 } else {
-    // Default Logic
     logoImg.src = 'assets/images/dvd.avif';
 }
-
 
 logoImg.onload = () => {
     const aspectRatio = logoImg.naturalHeight / logoImg.naturalWidth;
@@ -54,6 +47,7 @@ function centerLogo() {
 }
 window.addEventListener('resize', centerLogo);
 
+// Bouncing logo
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -70,3 +64,18 @@ function draw() {
     requestAnimationFrame(draw);
 }
 draw();
+
+// Click detection for April Fool's redirect
+canvas.addEventListener('click', (e) => {
+    if (month === 3 && date === 1) {
+        const rect = canvas.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const clickY = e.clientY - rect.top;
+
+        // Check if click is inside the logo
+        if (clickX >= logo.x && clickX <= logo.x + logo.w &&
+            clickY >= logo.y && clickY <= logo.y + logo.h) {
+            window.location.href = '/main/seasonal/aprilfools.html';
+        }
+    }
+});
