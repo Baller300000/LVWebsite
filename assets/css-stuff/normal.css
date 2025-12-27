@@ -12,4 +12,5 @@ body {
     height: 350px;
     color: white;
     text-shadow: 1px 1px 3px black;
+    font-family: monospace;
 }
