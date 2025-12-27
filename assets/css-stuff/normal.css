@@ -7,8 +7,9 @@ body {
 }
 
 body {
-    background: url('../images/sky.avif') no-repeat center center fixed;
-    background-size: cover;
+    background: url('../images/sky.avif') repeat center center fixed;
+    width: 350px;
+    height: 350px;
     color: white;
     text-shadow: 1px 1px 3px black;
 }
