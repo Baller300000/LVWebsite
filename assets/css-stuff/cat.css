@@ -11,9 +11,9 @@ body {
     margin: 0;
     min-height: 100vh;
     background-image: url("/assets/gif/cat.gif");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: top center;
-    background-size: cover;
+    background-size: auto;
     color: white;
     text-shadow: 1px 1px 3px black;
 }
