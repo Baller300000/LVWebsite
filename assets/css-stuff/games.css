@@ -11,9 +11,6 @@ body {
     background-size: auto;
     text-align: center;
     font-family: monospace;
-    transform: scale(1.25);
-    transform-origin: top left;
-    width: 80%;
 }
 
 canvas {

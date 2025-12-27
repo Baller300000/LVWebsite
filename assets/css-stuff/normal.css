@@ -13,14 +13,4 @@ body {
     color: white;
     text-shadow: 1px 1px 3px black;
     font-family: monospace;
-    transform: scale(1.25);
-    transform-origin: top left;
-    width: 80%;
-}
-
-#counter {
-    position: fixed;
-    bottom: 8px;
-    right: 8px;
-    z-index: 9999;
 }
