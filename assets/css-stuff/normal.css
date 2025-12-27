@@ -20,12 +20,13 @@ body {
 
 #dvd {
     position: fixed;
-
-    width: 150px;
-    aspect-ratio: 3 / 2;
-
     background: url("assets/images/dvd.png") no-repeat center;
     background-size: contain;
+}
 
-    pointer-events: none;
+#counter {
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    z-index: 9999;
 }
