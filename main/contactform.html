@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="/assets/css-stuff/normal.css">
+</head>
+
+<body>
+    <form action="https://formspree.io/f/mkonpbyz" method="POST">
+        <label>
+            Your email:
+            <input type="email" name="email" required>
+        </label><br>
+        Don't worry, I won't sell it.<br>
+
+        <label>
+            Rate the site:
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="rating" value="1" required> 1 – Painful
+        </label><br>
+        <label>
+            <input type="radio" name="rating" value="2"> 2 – Meh
+        </label><br>
+        <label>
+            <input type="radio" name="rating" value="3"> 3 – Fine
+        </label><br>
+        <label>
+            <input type="radio" name="rating" value="4"> 4 – Nice
+        </label><br>
+        <label>
+            <input type="radio" name="rating" value="5"> 5 – Legendary
+        </label>
+        <label><br>
+            Your message:
+            <textarea name="message"></textarea>
+        </label><br>
+        <button type="submit">Send</button>
+    </form>
+
+</body>
+
+</html>
