@@ -11,39 +11,22 @@
 </head>
 
 <body>
-    <form action="https://formspree.io/f/mkonpbyz" method="POST">
-        <label>
-            Your email:
-            <input type="email" name="email" required>
-        </label><br>
-        Don't worry, I won't sell it.<br>
-
-        <label>
-            Rate the site:
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="rating" value="1" required> 1 – Painful
-        </label><br>
-        <label>
-            <input type="radio" name="rating" value="2"> 2 – Meh
-        </label><br>
-        <label>
-            <input type="radio" name="rating" value="3"> 3 – Fine
-        </label><br>
-        <label>
-            <input type="radio" name="rating" value="4"> 4 – Nice
-        </label><br>
-        <label>
-            <input type="radio" name="rating" value="5"> 5 – Legendary
-        </label>
-        <label><br>
-            Your message:
-            <textarea name="message"></textarea>
-        </label><br>
-        <button type="submit">Send</button>
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <h1>Contact Me!</h1>
+        <h2>Here, you can contact me for any ideas you have, reviews, or feedback.</h2>
+        <h3>This form was made using <a href="https://web3forms.com/">Web3Forms</a></h3>
+        <input type="hidden" name="access_key" value="b9b4ad33-a549-46f4-ac8d-93ee49e6d3f0">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea name="message" required></textarea><br>
+        <button type="submit">Submit</button><br>
+        <input type="hidden" name="redirect" value="https://lvwebsite.pages.dev/main/contact/thanks.html">
+        <div class="h-captcha" data-captcha="true"></div>
     </form>
-
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 
 </html>
