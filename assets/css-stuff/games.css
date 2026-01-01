@@ -7,7 +7,7 @@ body {
 }
 
 body {
-    background: url('../assets/images/sky.png') repeat center center fixed;
+    background: url('/assets/images/sky.avif') repeat center center fixed;
     background-size: auto;
     text-align: center;
     font-family: monospace;
