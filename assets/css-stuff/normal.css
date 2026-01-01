@@ -21,3 +21,8 @@ hr {
     height: 6px;
     background: rgb(255, 255, 255);
 }
+
+nav {
+    display: flex;
+    align-items: center;
+}
