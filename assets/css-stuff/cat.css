@@ -22,6 +22,6 @@ body {
 
 hr {
     border: none;
-    height: 4px;
-    background: black;
+    height: 6px;
+    background: rgb(255, 255, 255);
 }
