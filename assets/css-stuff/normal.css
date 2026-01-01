@@ -13,4 +13,5 @@ body {
     text-shadow: 1px 1px 3px black;
     font-family: monospace;
     font-size: x-large;
+    padding-left: 16px;
 }
