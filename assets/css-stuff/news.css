@@ -41,3 +41,9 @@ h3 {
 small {
     color: #ddd;
 }
+
+hr {
+    border: none;
+    height: 4px;
+    background: black;
+}

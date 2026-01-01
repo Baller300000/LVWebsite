@@ -19,3 +19,9 @@ body {
     font-family: monospace;
     font-size: x-large;
 }
+
+hr {
+    border: none;
+    height: 4px;
+    background: black;
+}
