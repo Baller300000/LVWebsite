@@ -33,19 +33,11 @@
     <hr>
     <h1>Al Jazeera</h1>
     <h2>Click <a href="/main/news.html">Here</a> to go back</h2>
-
-    <label for="category">Choose category:</label>
-    <select id="category">
-        <option value="https://www.aljazeera.com/xml/rss/all.xml">All News</option>
-        <option value="https://www.aljazeera.com/xml/rss/world.xml">World</option>
-        <option value="https://www.aljazeera.com/xml/rss/middleeast.xml">Middle East</option>
-        <option value="https://www.aljazeera.com/xml/rss/business.xml">Business</option>
-        <option value="https://www.aljazeera.com/xml/rss/technology.xml">Technology</option>
-    </select>
-
     <div id="news-feed">Loading news...</div>
-
     <script src="/assets/scripts/news.js"></script>
+    <script>
+        loadNews("https://www.aljazeera.com/xml/rss/all.xml");
+    </script>
 </body>
 
 </html>
