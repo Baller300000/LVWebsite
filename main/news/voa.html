@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lambros Vyssoulis">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Lambros Vyssoulis, LVWebsite">
+    <title>LVWebsite - Voice Of America News</title>
+    <link rel="stylesheet" href="/assets/css-stuff/news.css">
+    <link async rel="stylesheet" href="/assets/css-stuff/crt.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+    <script src="/assets/scripts/statistics.js"></script>
+    <noscript>
+        <img src="https://statinside.com/pixel.png?id=37" referrerpolicy="unsafe-url">
+    </noscript>
+</head>
+
+<body>
+    <nav>
+        <h3>
+            <img src="/assets/favicon.ico" alt="logo">
+            <a href="/index.html">Home</a>
+            <a href="/main/about-me.html">About Me</a>
+            <a href="/main/devlog.html">Devlog</a>
+            <a href="/main/contact/contactform.html">Contact</a>
+            <a href="/main/torrenting.html">Torrenting Sites</a>
+            <a href="/main/news.html">News</a>
+        </h3>
+    </nav>
+    <hr>
+    <h1>Voice Of America</h1>
+    <h2>Click <a href="/main/news.html">Here</a> to go back</h2>
+
+    <label for="category">Choose category:</label>
+    <select id="category">
+        <option value="https://www.voanews.com/rss/feed/1074">World</option>
+        <option value="https://www.voanews.com/rss/feed/1132">US & Politics</option>
+        <option value="https://www.voanews.com/rss/feed/1124">Technology</option>
+        <option value="https://www.voanews.com/rss/feed/1128">Business</option>
+        <option value="https://www.voanews.com/rss/feed/1097">Africa</option>
+        <option value="https://www.voanews.com/rss/feed/1098">Asia</option>
+        <option value="https://www.voanews.com/rss/feed/1099">Latin America</option>
+        <option value="https://www.voanews.com/rss/feed/1100">Europe</option>
+    </select>
+
+    <div id="news-feed">Loading news...</div>
+
+    <script src="/assets/scripts/news.js"></script>
+</body>
+
+</html>
