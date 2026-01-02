@@ -1,16 +1,15 @@
 const container = document.getElementById("news-feed");
 const select = document.getElementById("category");
-const API_KEY = "mqtljkkgzunqiemhne3uw25tkuaznldfwnkhxcx0";
 
 async function loadNews(feedUrl) {
     container.innerHTML = "Loading news...";
     try {
         const res = await fetch(
-            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&api_key=${API_KEY}`
+            `/api/rss?url=${encodeURIComponent(feedUrl)}`
         );
         const data = await res.json();
 
-        container.innerHTML = ""; // clear previous news
+        container.innerHTML = "";
 
         if (!data.items || data.items.length === 0) {
             container.innerHTML = "No news found.";
@@ -32,8 +31,5 @@ async function loadNews(feedUrl) {
     }
 }
 
-// load initial feed
 loadNews(select.value);
-
-// reload when category changes
 select.addEventListener("change", () => loadNews(select.value));
