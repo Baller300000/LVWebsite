@@ -4,11 +4,32 @@ body {
     overflow: hidden;
     font-family: sans-serif;
 }
+
 .tool {
     position: absolute;
     top: 10px;
     left: 10px;
 }
+
 input {
     margin-left: 20px;
+}
+
+hr {
+    border: none;
+    height: 6px;
+    background: rgb(127.5, 127.5, 127.5);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
 }
