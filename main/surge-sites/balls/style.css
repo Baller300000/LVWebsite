@@ -1,0 +1,14 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+.tool {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+input {
+    margin-left: 20px;
+}
