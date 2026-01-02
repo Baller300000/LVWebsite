@@ -2,27 +2,27 @@ var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
 canvas.height = innerHeight;
 canvas.width = innerWidth;
-//fonction pour calculer un aléatoire entre deux bornes
+
 function random(min, max) {
     return Math.floor((max - min) * Math.random()) + min;
 }
 
 function Ball(size) {
     var $ = this;
-    //prend une vélocité entre 4 et 6
+
     $.xVelocity = random(3, 7);
     $.yVelocity = random(3, 7);
-    //crée deux nombres alétoires entre 0 et 1
+
     $.xRandom = Math.random();
     $.yRandom = Math.random();
-    //rend chaqué vélocité positive ou négative (au hasard)
+
     if ($.xRandom > 0.5) {
         $.xVelocity = $.xVelocity * -1;
     }
     if ($.yRandom > 0.5) {
         $.yVelocity = $.yVelocity * -1;
     }
-    //prend une position au hasard
+
     $.x = random(0 + size, canvas.width - size);
     $.y = random(0 + size, canvas.height - size);
     $.w = size;
@@ -64,7 +64,7 @@ var inputBallNumber = document.querySelector('.ballnumber');
 var ballNumber = inputBallNumber.value;
 var inputBallSize = document.querySelector('.ballsize');
 var ballSize = inputBallSize.value;
-//init ball array
+
 fillBallsArray(ballNumber, ballSize);
 
 inputBallNumber.addEventListener('change', function (e) {
