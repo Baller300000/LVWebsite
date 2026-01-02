@@ -28,3 +28,9 @@ nav {
 	display: flex;
 	align-items: center;
 }
+
+nav img {
+	width: 64px;
+	height: 64px;
+	vertical-align: middle;
+}
