@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    gap: 50px;
+}
+
+.left-column,
+.right-column {
+    width: 50%;
+}
