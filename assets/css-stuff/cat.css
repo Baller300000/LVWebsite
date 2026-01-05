@@ -18,9 +18,9 @@ body {
     text-shadow: 1px 1px 3px black;
     font-family: monospace;
     font-size: x-large;
+    margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 hr {
