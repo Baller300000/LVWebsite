@@ -16,9 +16,7 @@ body {
     padding: 20px;
     max-width: 800px;
     margin: auto;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 a {

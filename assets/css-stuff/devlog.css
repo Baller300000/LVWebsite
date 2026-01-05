@@ -7,9 +7,3 @@
 .right-column {
     width: 50%;
 }
-
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
