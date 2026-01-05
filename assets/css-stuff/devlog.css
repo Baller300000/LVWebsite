@@ -7,3 +7,9 @@
 .right-column {
     width: 50%;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
