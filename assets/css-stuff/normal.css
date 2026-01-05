@@ -42,3 +42,12 @@ ul {
 	text-align: center;
 	padding: 0;
 }
+
+.counter {
+	position: fixed;
+	top: 50%;
+	left: 0%;
+	transform: translate(-50%, -50%);
+	height: auto;
+	margin-left: 100px;
+}
