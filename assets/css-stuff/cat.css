@@ -39,3 +39,9 @@ nav img {
     height: 64px;
     vertical-align: middle;
 }
+
+ul {
+    list-style-position: inside;
+    text-align: center;
+    padding: 0;
+}
