@@ -7,7 +7,7 @@ body {
 }
 
 body {
-    background: url('/assets/images/sky.avif') repeat center center fixed;
+    background: rgb(237, 173, 55) repeat center center fixed;
     background-size: auto;
     text-align: center;
     font-family: monospace;
@@ -18,7 +18,7 @@ canvas {
     border: 2px solid #222;
     display: block;
     margin: 0 auto;
-    background: rgb(182, 127, 26);
+    background: rgb(237, 173, 55);
 }
 
 button {
