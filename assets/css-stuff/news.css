@@ -24,7 +24,7 @@ a {
     text-decoration: underline;
 }
 
-a:hover {
+a::highlight {
     text-decoration: dotted;
     color: rgb(237, 197, 55);
 }
