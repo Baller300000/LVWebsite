@@ -19,16 +19,6 @@ body {
     text-align: center;
 }
 
-a {
-    color: rgb(255, 255, 0);
-    text-decoration: underline;
-}
-
-a::highlight {
-    text-decoration: dotted;
-    color: rgb(237, 197, 55);
-}
-
 select {
     margin-bottom: 20px;
     padding: 5px;
