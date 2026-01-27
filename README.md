@@ -4,7 +4,7 @@ Basically my website. I just make it for fun!
 If you have ideas (or find a bug), make an issue. I will probably respond.
 I have some very-not-stolen games (wink wink) if you want some
 
-## Access through [lvwebsite.pages.dev](https://lvwebsite.pages.dev)
+## Access through [lvwebsite.com](https://lvwebsite.com)
 
 Feel free to explore!
 
