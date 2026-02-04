@@ -93,6 +93,43 @@
 	<h3>I know most of you are coming here for the games<br>
 		but please check out the rest of the site as well! :3<br>
 		Thanks for visiting my site! :3</h3>
+	<img id="dateImage" src="/assets/images/happy.gif" alt="Date-based image"
+		style="position: fixed; bottom: 10px; right: 10px; max-width: 100px; max-height: 75px; z-index: 9999; object-fit: contain;">
+
+	<script>
+		function updateDateImage() {
+			const today = new Date();
+			const month = today.getMonth() + 1;
+			const date = today.getDate();
+			let image = null;
+
+			// Valentine's Day (February 14)
+			if (month === 2 && date === 14) {
+				image = '/assets/seasonal/val.avif';
+			}
+			// April Fools (April 1)
+			else if (month === 4 && date === 1) {
+				image = '/assets/seasonal/teapot.avif';
+			}
+			// Halloween (October 31)
+			else if (month === 10 && date === 31) {
+				image = '/assets/seasonal/spiderweb.avif';
+			}
+			// Christmas (December 25)
+			else if (month === 12 && date === 25) {
+				image = '/assets/seasonal/ch.gif';
+			}
+
+			if (image) {
+				document.getElementById('dateImage').src = image;
+				document.getElementById('dateImage').style.display = 'block';
+			} else {
+				document.getElementById('dateImage').style.display = 'none';
+			}
+		}
+
+		updateDateImage();
+	</script>
 	<div id="counter">
 		<a href="https://www.amazingcounters.com">
 			<img src="https://cc.amazingcounters.com/counter.php?i=3304071&c=9912526" alt="AmazingCounters.com">
