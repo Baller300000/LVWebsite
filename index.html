@@ -55,9 +55,6 @@
 	<h3>
 		Here is more stuff <a href="main/about-me.html">about me</a><br>
 		I also have a discord server! Join it <a href="https://discord.gg/VKKvFUbZ">Here :3</a><br>
-		<iframe src="https://discord.com/widget?id=1466698363436142729&theme=dark" width="350" height="500"
-			allowtransparency="true" frameborder="0"
-			sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 	</h3>
 	<h3>
 		Also, my github profile is <a href="https://github.com/Baller300000">Here</a>! As you can see,<br>
@@ -101,7 +98,7 @@
 			const today = new Date();
 			const month = today.getMonth() + 1;
 			const date = today.getDate();
-			let image = null;
+			let image = '/assets/images/happy.gif'; // Default image
 
 			// Valentine's Day (February 14)
 			if (month === 2 && date === 14) {
@@ -120,12 +117,7 @@
 				image = '/assets/seasonal/ch.gif';
 			}
 
-			if (image) {
-				document.getElementById('dateImage').src = image;
-				document.getElementById('dateImage').style.display = 'block';
-			} else {
-				document.getElementById('dateImage').style.display = 'none';
-			}
+			document.getElementById('dateImage').src = image;
 		}
 
 		updateDateImage();
