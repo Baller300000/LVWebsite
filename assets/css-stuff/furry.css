@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+    max-width: none;
+}
+
+body {
+    background: url("/assets/images/boi.jpg") repeat center center fixed;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    font-family: monospace;
+    font-size: x-large;
+    padding-left: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 6px;
+    background: rgb(127.5, 127.5, 127.5);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+}
+
+ul {
+    list-style-position: inside;
+    text-align: center;
+    padding: 0;
+}
