@@ -24,7 +24,7 @@ function updateDateImage() {
     else if (month === 10 && date === 3) {
         image = '/assets/images/boi.jpg';
     }
-    // im kinda a furry
+    // im kinda a furry (see /main/about-me/furry.html)
 
     document.getElementById('dateImage').src = image;
 }
