@@ -8,7 +8,7 @@ I have some very-not-stolen games (wink wink) if you want some
 
 Feel free to explore!
 
-WARNING! When I commit with messages that are too simple ("do stuff"),
+WARNING! When I commit with messages that are too simple ("do stuff", "qwerty" or "asfsdasdsdfsghfghjghhdfhjdsdSDJsdfhghsalsdjh"),
 it is because I need to go places and am running out of time.
 Thank you
 
