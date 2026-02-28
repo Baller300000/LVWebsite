@@ -10,7 +10,7 @@ body {
 body {
     background: url("/assets/images/boi.jpg") repeat center center fixed;
     background-size: 25%;
-    color: white;
+    color: black;
     text-shadow: 1px 1px 3px black;
     font-family: monospace;
     font-size: x-large;
