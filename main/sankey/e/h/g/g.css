@@ -1,0 +1,10 @@
+body {
+    color: aqua;
+    text-align: center;
+    background-image: url(./g.jpg);
+    word-break: break-all;
+}
+
+#biggie {
+    font-size: 100px;
+}
