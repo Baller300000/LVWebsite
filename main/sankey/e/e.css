@@ -1,0 +1,14 @@
+body {
+    background-image: url(./e.jpg);
+    background-size: 300px 400px;
+}
+
+#biggie {
+    font-size: 100px;
+    color: white;
+    font-family: 'Arial Black', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+}
