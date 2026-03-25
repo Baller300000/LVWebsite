@@ -3,6 +3,7 @@ body {
     text-align: center;
     background-image: url(./g.jpg);
     word-break: break-all;
+    font-size: x-large;
 }
 
 #biggie {
