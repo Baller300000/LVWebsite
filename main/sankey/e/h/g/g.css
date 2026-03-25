@@ -8,3 +8,8 @@ body {
 #biggie {
     font-size: 100px;
 }
+
+a {
+    color: orangered;
+    text-decoration: none;
+}
