@@ -13,3 +13,17 @@ body {
     align-items: center;
     word-break: break-all;
 }
+
+#aich a {
+    font-size: 150%;
+    color: orangered;
+}
+
+#aich2 {
+    color: aqua;
+}
+
+
+#aich2 a {
+    color: orangered;
+}
