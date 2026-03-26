@@ -1,9 +1,9 @@
 body {
     color: aqua;
     text-align: center;
+    background-image: url(./DETERMINATION.jpg);
     word-break: break-all;
     font-size: x-large;
-    background-image: url(./i-can-explain.jpeg);
 }
 
 #biggie {
