@@ -1,0 +1,12 @@
+main {
+    background-image: url(../../../LVWEBSITE.gif);
+    background-size: 25%;
+    font-size: x-large;
+    color: aqua;
+    text-align: center;
+}
+
+a {
+    color: orangered;
+    text-decoration: none;
+}
