@@ -1,0 +1,20 @@
+body {
+    background-color: blanchedalmond;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    font-family: monospace;
+    font-size: x-large;
+    padding-left: 16px;
+    margin: 0;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+#biggie {
+    font-size: 100px;
+}
+
+a {
+    color: brown;
+    text-decoration: none;
+}

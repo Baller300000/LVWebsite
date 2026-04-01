@@ -4,6 +4,7 @@ body {
     background-image: url(./g.jpg);
     word-break: break-all;
     font-size: x-large;
+    overflow-wrap: break-word;
 }
 
 #biggie {
