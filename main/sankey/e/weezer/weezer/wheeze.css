@@ -1,0 +1,8 @@
+body {
+    background-image: url(./weezer.jpg);
+    background-size: 1400px 1000px;
+    font-size: x-large;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    text-align: center;
+}
