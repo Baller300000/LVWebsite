@@ -6,3 +6,13 @@ body {
     text-shadow: 1px 1px 3px black;
     text-align: center;
 }
+
+#biggie {
+    font-size: 100px;
+    color: white;
+    font-family: 'Arial Black', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+}
