@@ -1,0 +1,10 @@
+body {
+    color: black;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#auxilium {
+    display: grid;
+    place-items: center;
+}
