@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Interactive science, engineering, programming, networking, and economics labs from LVWebsite.">
+    <title>LVWebsite - Field Labs</title>
+    <link rel="stylesheet" href="../assets/css-stuff/normal.css">
+    <link rel="stylesheet" href="../assets/css-stuff/labs.css">
+    <script src="../assets/scripts/statistics.js"></script>
+</head>
+
+<body>
+    <nav>
+        <h3>
+            <a href="../index.html">Home</a>
+            <a href="./about-me/about-me.html">About Me</a>
+            <a href="./devlog/devlog.html">Devlog</a>
+            <a href="./contact/contactform.html">Contact</a>
+            <a href="./news.html">News</a>
+            <a href="./survey.html">Survey</a>
+            <a href="./travel/index.html">Trips</a>
+        </h3>
+    </nav>
+
+    <main class="labs-shell">
+        <header class="labs-hero">
+            <p class="eyebrow">LV / FIELD LABS</p>
+            <h1>Questions are<br><em>better</em> as tools.</h1>
+            <p>Small interactive explainers for solar energy, aerospace, programming, networking, and economics. Built
+                for curiosity, not certainty.</p>
+            <div class="labs-meta"><span>07 live tools</span><span>20 topic guides</span><span>Works offline</span>
+            </div>
+        </header>
+
+        <section class="tool-section" id="solar" aria-labelledby="solar-title">
+            <div class="section-heading">
+                <p class="section-label">01 / SUNLIGHT</p>
+                <h2 id="solar-title">Solar energy & tech</h2>
+            </div>
+            <div class="tool-grid">
+                <article class="lab-card lab-card-wide">
+                    <div class="card-kicker">CALCULATOR</div>
+                    <h3>Solar ROI calculator</h3>
+                    <p>Estimate payback from a monthly bill and available roof area. This is a planning model, not a
+                        quote.</p>
+                    <div class="input-grid"><label>Monthly bill <input id="solarBill" type="number" value="120" min="0"
+                                step="1"><small>USD / month</small></label><label>Roof area <input id="roofArea"
+                                type="number" value="500" min="1" step="10"><small>square feet</small></label><label>Sun
+                            hours <input id="sunHours" type="number" value="4.5" min="1" max="8" step=".1"><small>peak
+                                hours / day</small></label></div>
+                    <div class="result-strip"><strong id="solarResult">Calculating...</strong><span
+                            id="solarDetail"></span></div>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">STORAGE</div>
+                    <h3>Battery sizing estimator</h3>
+                    <p>Match an overnight load to a battery bank with a practical depth-of-discharge buffer.</p>
+                    <label>Nightly energy use <input id="batteryLoad" type="number" value="8" min=".1"
+                            step=".5"><small>kWh</small></label><label>System voltage <select id="batteryVoltage">
+                            <option value="12">12 V</option>
+                            <option value="24">24 V</option>
+                            <option value="48" selected>48 V</option>
+                        </select></label>
+                    <div class="mini-result" id="batteryResult">You need about 222 Ah.</div>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">COMPARE</div>
+                    <h3>Panel breakdown matrix</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Panel</th>
+                                <th>Efficiency</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mono</td>
+                                <td>20-23%</td>
+                                <td>Higher</td>
+                            </tr>
+                            <tr>
+                                <td>Poly</td>
+                                <td>15-18%</td>
+                                <td>Lower</td>
+                            </tr>
+                            <tr>
+                                <td>Thin film</td>
+                                <td>10-13%</td>
+                                <td>Flexible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">GUIDE</div>
+                    <h3>DIY solar projects</h3>
+                    <details>
+                        <summary>Phone charger blueprint</summary>
+                        <p>Panel → charge controller → protected 18650 pack → 5 V boost converter → USB-C. Fuse the
+                            battery lead and never charge an unprotected cell.</p>
+                    </details>
+                    <details>
+                        <summary>Balcony setup</summary>
+                        <p>Measure shade first, use a microinverter approved for your grid, and treat mounting as the
+                            primary engineering problem.</p>
+                    </details>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">DECISION TOOL</div>
+                    <h3>Grid-tie or off-grid?</h3>
+                    <div class="segmented"><button data-grid-mode="grid">Grid-tie</button><button data-grid-mode="off"
+                            class="is-selected">Off-grid</button></div>
+                    <p id="gridAdvice">Best when outages are common or a connection is unavailable. Add storage and
+                        design for your worst week.</p>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">IMPACT</div>
+                    <h3>Eco-impact counter</h3>
+                    <p>Every 1,000 kWh of modeled solar production is roughly equivalent to:</p>
+                    <div class="impact-number" id="impactNumber">0 trees</div><input id="impactSlider" type="range"
+                        min="0" max="25000" value="6000" step="500"><small><span id="impactKwh">6,000</span> kWh modeled
+                        production</small>
+                </article>
+            </div>
+            <div class="topic-list" data-filter-group="solar">
+                <article><strong>Live solar production tracker</strong><span>Sample-array history with daily, monthly,
+                        and seasonal views.</span></article>
+                <article><strong>Net metering state guide</strong><span>Compare buy-back policies, incentives, and the
+                        questions to ask your utility.</span></article>
+                <article><strong>Solar glare & angling tool</strong><span>Seasonal sun paths, tilt angle heuristics, and
+                        a glare-check worksheet.</span></article>
+                <article><strong>Emerging solar tech blog</strong><span>Transparent solar glass, perovskites, bifacial
+                        panels, and what is still experimental.</span></article>
+            </div>
+        </section>
+
+        <section class="tool-section" id="aerospace" aria-labelledby="aerospace-title">
+            <div class="section-heading">
+                <p class="section-label">02 / UPWARD</p>
+                <h2 id="aerospace-title">Aerospace engineering</h2>
+            </div>
+            <div class="tool-grid">
+                <article class="lab-card lab-card-wide">
+                    <div class="card-kicker">ORBIT SANDBOX</div>
+                    <h3>Orbital velocity sandbox</h3>
+                    <p>See how altitude changes circular orbital velocity around Earth. It is simplified, but the
+                        relationship is real.</p><label>Altitude <input id="orbitAltitude" type="range" min="200"
+                            max="36000" step="100" value="400"><output id="orbitOutput">400 km / 7.67
+                            km/s</output></label>
+                    <div class="orbit-track"><span id="orbitDot"></span></div>
+                    <p class="muted">LEO is fast and low. Geostationary orbit is high and slow, but needs a lot more
+                        energy to reach.</p>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">PROPULSION</div>
+                    <h3>Engine comparison</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Isp</th>
+                                <th>Best at</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Solid</td>
+                                <td>200-300 s</td>
+                                <td>Simple thrust</td>
+                            </tr>
+                            <tr>
+                                <td>Liquid</td>
+                                <td>300-465 s</td>
+                                <td>Control</td>
+                            </tr>
+                            <tr>
+                                <td>Ion</td>
+                                <td>1,000+ s</td>
+                                <td>Deep space</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">CHECKLIST</div>
+                    <h3>CubeSat design</h3>
+                    <ul class="check-list">
+                        <li>Mass budget and center of gravity</li>
+                        <li>Power generation and battery margin</li>
+                        <li>Radio link and ground station</li>
+                        <li>Thermal, radiation, and deployment tests</li>
+                    </ul>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">MATERIALS</div>
+                    <h3>Aviation vs space</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Titanium</td>
+                                <td>Strong, light, corrosion resistant</td>
+                            </tr>
+                            <tr>
+                                <td>Carbon fiber</td>
+                                <td>Excellent stiffness-to-weight</td>
+                            </tr>
+                            <tr>
+                                <td>Inconel</td>
+                                <td>Hot, heavy, extremely durable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+            <div class="topic-list">
+                <article><strong>Launch calendar</strong><span>A live-updating schedule for NASA, ESA, SpaceX, and
+                        Rocket Lab missions.</span></article>
+                <article><strong>Re-entry breakdown</strong><span>Thermal protection, plasma, and why friction is only
+                        part of the story.</span></article>
+                <article><strong>Mission timelines</strong><span>Apollo 11, Voyager, and the decisions that made
+                        landmark missions possible.</span></article>
+                <article><strong>Mars colonization blueprint</strong><span>Life support, radiation shielding, and
+                        in-situ resource utilization.</span></article>
+                <article><strong>Supersonic aerodynamics</strong><span>Shockwaves, sonic booms, and the strange geometry
+                        of Mach speed.</span></article>
+                <article><strong>Drone & UAV guide</strong><span>Lift, drag, rotor layouts, and autonomous aircraft
+                        trade-offs.</span></article>
+            </div>
+        </section>
+
+        <section class="tool-section" id="programming" aria-labelledby="programming-title">
+            <div class="section-heading">
+                <p class="section-label">03 / LOGIC</p>
+                <h2 id="programming-title">Computer programming</h2>
+            </div>
+            <div class="tool-grid">
+                <article class="lab-card lab-card-wide">
+                    <div class="card-kicker">REGEX DEBUGGER</div>
+                    <h3>Pattern tester</h3>
+                    <p>Try a regular expression against a sample string. Matches are highlighted, and invalid patterns
+                        explain themselves.</p>
+                    <div class="input-grid"><label>Pattern <input id="regexPattern" value="\\b(cat|car)\\b"
+                                spellcheck="false"></label><label>Flags <input id="regexFlags" value="gi" maxlength="5"
+                                spellcheck="false"></label></div><textarea id="regexText"
+                        rows="3">The cat found a car. A caterpillar stayed home.</textarea>
+                    <div class="regex-result" id="regexResult">Matches appear here.</div>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">ALGORITHM VISUALIZER</div>
+                    <h3>Sorting, in motion</h3>
+                    <div class="bar-chart" id="sortBars"></div><button id="sortButton">Animate merge sort</button>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">CHEAT SHEET</div>
+                    <h3>Syntax drawer</h3>
+                    <div class="code-tabs"><button data-code="js" class="is-selected">JS</button><button
+                            data-code="py">Python</button><button data-code="rust">Rust</button><button
+                            data-code="go">Go</button></div>
+                    <pre id="codeSnippet">const answer = items.map(item =&gt; item.value);</pre><button
+                        class="copy-button" id="copyCode">Copy snippet</button>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">LAYOUT LAB</div>
+                    <h3>Flexbox & Grid</h3>
+                    <div class="layout-demo" id="layoutDemo"><span>1</span><span>2</span><span>3</span></div>
+                    <div class="segmented"><button data-layout="flex" class="is-selected">Flex</button><button
+                            data-layout="grid">Grid</button></div>
+                </article>
+            </div>
+            <div class="topic-list">
+                <article><strong>API testing playground</strong><span>Mock JSON responses, async requests, status codes,
+                        and error states.</span></article>
+                <article><strong>Git Git-Good guide</strong><span>Branching, merging, rebasing, and recovering from a
+                        conflict.</span></article>
+                <article><strong>Daily challenge</strong><span>One small logic problem with room for a community
+                        answer.</span></article>
+                <article><strong>Framework comparison</strong><span>React, Vue, and Svelte compared by mental model,
+                        bundle size, and performance.</span></article>
+                <article><strong>Open-source directory</strong><span>A curated shelf of beginner-friendly
+                        good-first-issue repositories.</span></article>
+                <article><strong>Code performance bench</strong><span>Compare two JavaScript snippets with repeatable
+                        timing instead of vibes.</span></article>
+            </div>
+        </section>
+
+        <section class="tool-section" id="networking" aria-labelledby="networking-title">
+            <div class="section-heading">
+                <p class="section-label">04 / CONNECTIONS</p>
+                <h2 id="networking-title">Computer networking</h2>
+            </div>
+            <div class="tool-grid">
+                <article class="lab-card lab-card-wide">
+                    <div class="card-kicker">IPV4 TOOL</div>
+                    <h3>Subnet mask calculator</h3>
+                    <div class="input-grid"><label>IPv4 address <input id="ipAddress"
+                                value="192.168.1.0"></label><label>Prefix length <input id="prefixLength" type="number"
+                                value="24" min="0" max="32"></label></div>
+                    <div class="result-strip"><strong id="subnetResult">Network: 192.168.1.0</strong><span
+                            id="subnetDetail">254 usable hosts</span></div>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">REFERENCE</div>
+                    <h3>Common ports</h3><input id="portSearch" placeholder="Search SSH, HTTPS..."
+                        aria-label="Search common ports">
+                    <div class="port-list" id="portList"></div>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">OSI MODEL</div>
+                    <h3>Seven layers, quickly</h3>
+                    <ol class="osi-list">
+                        <li><b>Application</b> HTTP, DNS</li>
+                        <li><b>Transport</b> TCP, UDP</li>
+                        <li><b>Network</b> IP, routing</li>
+                        <li><b>Link</b> Ethernet, Wi-Fi</li>
+                    </ol>
+                </article>
+            </div>
+            <div class="topic-list">
+                <article><strong>Packet capture simulator</strong><span>Walk through a TCP handshake as if you were
+                        reading a Wireshark capture.</span></article>
+                <article><strong>DNS resolution flowchart</strong><span>From URL to browser: cache, resolver, root,
+                        authoritative server.</span></article>
+                <article><strong>Homelab architecture plans</strong><span>VLANs, firewalls, NAS storage, and a sensible
+                        trust boundary.</span></article>
+                <article><strong>IPv4 vs IPv6</strong><span>Address exhaustion, header changes, and routing
+                        improvements.</span></article>
+                <article><strong>VPN & tunneling</strong><span>WireGuard, OpenVPN, and IPSec compared by speed and
+                        overhead.</span></article>
+                <article><strong>Troubleshooting toolkit</strong><span>A logical path through ping, traceroute,
+                        nslookup, and the cable.</span></article>
+            </div>
+        </section>
+
+        <section class="tool-section" id="economics" aria-labelledby="economics-title">
+            <div class="section-heading">
+                <p class="section-label">05 / TRADE-OFFS</p>
+                <h2 id="economics-title">Economics & finance</h2>
+            </div>
+            <div class="tool-grid">
+                <article class="lab-card">
+                    <div class="card-kicker">FORECAST</div>
+                    <h3>Compound interest</h3><label>Starting amount <input id="principal" type="number" value="1000"
+                            min="0"></label><label>Monthly contribution <input id="contribution" type="number"
+                            value="100" min="0"></label><label>Annual return <input id="interestRate" type="number"
+                            value="7" min="0" step=".1"><small>percent</small></label><label>Years <input
+                            id="interestYears" type="number" value="10" min="1" max="60"></label>
+                    <div class="mini-result" id="interestResult">Calculating...</div>
+                </article>
+                <article class="lab-card">
+                    <div class="card-kicker">PURCHASING POWER</div>
+                    <h3>Inflation impact</h3><label>Amount today <input id="inflationAmount" type="number" value="1000"
+                            min="0"></label><label>Annual inflation <input id="inflationRate" type="number" value="3"
+                            min="0" step=".1"><small>percent</small></label><label>Years <input id="inflationYears"
+                            type="number" value="20" min="1" max="100"></label>
+                    <div class="mini-result" id="inflationResult">Calculating...</div>
+                </article>
+                <article class="lab-card lab-card-wide">
+                    <div class="card-kicker">MARKET SANDBOX</div>
+                    <h3>Supply & demand</h3>
+                    <p>Move the price and see a simple demand curve respond. This is a toy model for thinking, not a
+                        market prediction.</p><label>Price <input id="marketPrice" type="range" min="10" max="100"
+                            value="50"><output id="marketOutput">Price 50 / demand 50 / supply 50</output></label>
+                    <div class="market-chart"><span class="demand-line"></span><span class="supply-line"></span><span
+                            class="market-dot" id="marketDot"></span></div>
+                </article>
+            </div>
+            <div class="topic-list">
+                <article><strong>Opportunity cost evaluator</strong><span>Put time and money on the same page before
+                        choosing.</span></article>
+                <article><strong>Policy matrix</strong><span>Central bank interest rates versus government taxation and
+                        spending.</span></article>
+                <article><strong>Crypto vs fiat tracker</strong><span>Compare CPI, currency strength, and digital asset
+                        volatility without false equivalence.</span></article>
+                <article><strong>Game theory models</strong><span>Prisoner's Dilemma, Nash equilibrium, and the
+                        incentives behind a choice.</span></article>
+                <article><strong>UBI simulator</strong><span>Explore hypothetical tax shifts and payout impacts.</span>
+                </article>
+                <article><strong>Economic indicators</strong><span>GDP growth, unemployment, treasury yields, and what
+                        each can miss.</span></article>
+                <article><strong>Market structures</strong><span>Monopoly, oligopoly, perfect competition, and
+                        monopolistic competition.</span></article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer labs-footer">
+        <p><a href="../index.html">Back to LVWebsite</a></p>
+        <p>Models are educational, not professional advice.</p>
+    </footer>
+    <script src="../assets/scripts/labs.js"></script>
+</body>
+
+</html>
