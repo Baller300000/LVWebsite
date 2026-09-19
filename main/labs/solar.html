@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solar Energy Lab - LVWebsite</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <script src="../../assets/scripts/labs.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h3><a href="./index.html">Labs</a><a href="../../index.html">Home</a><a href="../about-me/about-me.html">About
+                Me</a><a href="../contact/contactform.html">Contact</a></h3>
+    </nav>
+    <main class="labs-shell lab-workshop">
+        <header class="workshop-header">
+            <p class="eyebrow">01 / SUNLIGHT</p>
+            <h1>Solar energy<br><em>& tech</em></h1>
+            <p>From a first back-of-the-envelope estimate to the real trade-offs behind storage, panels, and grid
+                connections.</p>
+        </header>
+        <div class="tool-grid">
+            <article class="lab-card lab-card-wide">
+                <div class="card-kicker">CALCULATOR</div>
+                <h3>Solar ROI calculator</h3>
+                <p>Planning model, not a quote.</p>
+                <div class="input-grid"><label>Monthly bill <input id="solarBill" type="number" value="120"
+                            min="0"><small>USD / month</small></label><label>Roof area <input id="roofArea"
+                            type="number" value="500" min="1"><small>square feet</small></label><label>Sun hours <input
+                            id="sunHours" type="number" value="4.5" min="1" max="8" step=".1"><small>peak hours /
+                            day</small></label></div>
+                <div class="result-strip"><strong id="solarResult">Calculating...</strong><span id="solarDetail"></span>
+                </div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">STORAGE</div>
+                <h3>Battery sizing</h3>
+                <p>Match overnight energy to a battery bank.</p><label>Nightly use <input id="batteryLoad" type="number"
+                        value="8" min=".1" step=".5"><small>kWh</small></label><label>System voltage <select
+                        id="batteryVoltage">
+                        <option>12</option>
+                        <option>24</option>
+                        <option selected>48</option>
+                    </select></label>
+                <div class="mini-result" id="batteryResult">Calculating...</div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">COMPARE</div>
+                <h3>Panel matrix</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Panel</th>
+                            <th>Efficiency</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mono</td>
+                            <td>20-23%</td>
+                            <td>Higher</td>
+                        </tr>
+                        <tr>
+                            <td>Poly</td>
+                            <td>15-18%</td>
+                            <td>Lower</td>
+                        </tr>
+                        <tr>
+                            <td>Thin film</td>
+                            <td>10-13%</td>
+                            <td>Flexible</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">DECISION</div>
+                <h3>Grid-tie or off-grid?</h3>
+                <div class="segmented"><button data-grid-mode="grid">Grid-tie</button><button data-grid-mode="off"
+                        class="is-selected">Off-grid</button></div>
+                <p id="gridAdvice">Best when outages are common or a connection is unavailable. Add storage and design
+                    for your worst week.</p>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">IMPACT</div>
+                <h3>Eco-impact</h3>
+                <p>Translate modeled solar production into an approachable equivalent.</p>
+                <div class="impact-number" id="impactNumber">0 trees</div><input id="impactSlider" type="range" min="0"
+                    max="25000" value="6000" step="500"><small><span id="impactKwh">6,000</span> kWh modeled</small>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">GUIDE</div>
+                <h3>DIY blueprints</h3>
+                <details open>
+                    <summary>Phone charger</summary>
+                    <p>Panel -&gt; charge controller -&gt; protected battery -&gt; 5 V boost converter -&gt; USB-C. Fuse
+                        the battery
+                        lead.</p>
+                </details>
+                <details>
+                    <summary>Balcony setup</summary>
+                    <p>Measure shade, use approved equipment, and treat mounting as the primary engineering problem.</p>
+                </details>
+            </article>
+        </div>
+        <div class="topic-list">
+            <article><strong>Live production tracker</strong><span>Sample-array history with daily and seasonal
+                    views.</span></article>
+            <article><strong>Net metering guide</strong><span>Buy-back rates, incentives, and questions for your
+                    utility.</span></article>
+            <article><strong>Glare & angling tool</strong><span>Seasonal sun paths and panel tilt heuristics.</span>
+            </article>
+            <article><strong>Emerging tech blog</strong><span>Transparent glass, perovskites, and bifacial
+                    panels.</span></article>
+        </div>
+    </main>
+    <footer class="site-footer labs-footer">
+        <p><a href="./index.html">Back to all labs</a></p>
+    </footer>
+</body>
+
+</html>

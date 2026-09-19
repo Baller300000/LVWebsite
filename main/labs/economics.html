@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Economics Lab - LVWebsite</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <script src="../../assets/scripts/labs.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h3><a href="./index.html">Labs</a><a href="../../index.html">Home</a><a href="../about-me/about-me.html">About
+                Me</a><a href="../contact/contactform.html">Contact</a></h3>
+    </nav>
+    <main class="labs-shell lab-workshop">
+        <header class="workshop-header">
+            <p class="eyebrow">05 / TRADE-OFFS</p>
+            <h1>Economics<br><em>& finance</em></h1>
+            <p>Make assumptions visible. Move a number, watch the model change, and keep the caveats close.</p>
+        </header>
+        <div class="tool-grid">
+            <article class="lab-card">
+                <div class="card-kicker">FORECAST</div>
+                <h3>Compound interest</h3><label>Starting amount <input id="principal" type="number" value="1000"
+                        min="0"></label><label>Monthly contribution <input id="contribution" type="number" value="100"
+                        min="0"></label><label>Annual return <input id="interestRate" type="number" value="7" min="0"
+                        step=".1"><small>percent</small></label><label>Years <input id="interestYears" type="number"
+                        value="10" min="1" max="60"></label>
+                <div class="mini-result" id="interestResult">Calculating...</div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">PURCHASING POWER</div>
+                <h3>Inflation impact</h3><label>Amount today <input id="inflationAmount" type="number" value="1000"
+                        min="0"></label><label>Annual inflation <input id="inflationRate" type="number" value="3"
+                        min="0" step=".1"><small>percent</small></label><label>Years <input id="inflationYears"
+                        type="number" value="20" min="1" max="100"></label>
+                <div class="mini-result" id="inflationResult">Calculating...</div>
+            </article>
+            <article class="lab-card lab-card-wide">
+                <div class="card-kicker">MARKET SANDBOX</div>
+                <h3>Supply & demand</h3>
+                <p>Move the price and see a simple demand curve respond.</p><label>Price <input id="marketPrice"
+                        type="range" min="10" max="100" value="50"><output id="marketOutput">Price 50 / demand 50 /
+                        supply 50</output></label>
+                <div class="market-chart"><span class="market-dot" id="marketDot"></span></div>
+            </article>
+        </div>
+        <div class="topic-list">
+            <article><strong>Opportunity cost</strong><span>Put time and money on one page.</span></article>
+            <article><strong>Policy matrix</strong><span>Interest rates versus taxes and spending.</span></article>
+            <article><strong>Crypto vs fiat</strong><span>Indicators without false equivalence.</span></article>
+            <article><strong>Game theory</strong><span>Prisoner's Dilemma and incentives.</span></article>
+            <article><strong>UBI simulator</strong><span>Hypothetical taxes and payouts.</span></article>
+            <article><strong>Market structures</strong><span>Monopoly through perfect competition.</span></article>
+        </div>
+    </main>
+    <footer class="site-footer labs-footer">
+        <p><a href="./index.html">Back to all labs</a></p>
+    </footer>
+</body>
+
+</html>

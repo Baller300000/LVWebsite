@@ -2,6 +2,7 @@ const $ = (selector) => document.querySelector(selector);
 const money = (value) => `$${Math.round(value).toLocaleString()}`;
 
 function updateSolar() {
+    if (!$('#solarBill')) return;
     const bill = Number($('#solarBill').value) || 0;
     const roof = Number($('#roofArea').value) || 0;
     const sun = Number($('#sunHours').value) || 0;
@@ -15,6 +16,7 @@ function updateSolar() {
 }
 
 function updateBattery() {
+    if (!$('#batteryLoad')) return;
     const load = Number($('#batteryLoad').value) || 0;
     const voltage = Number($('#batteryVoltage').value) || 48;
     const ampHours = load * 1000 / voltage / 0.8;
@@ -22,12 +24,14 @@ function updateBattery() {
 }
 
 function updateImpact() {
+    if (!$('#impactSlider')) return;
     const kwh = Number($('#impactSlider').value);
     $('#impactKwh').textContent = kwh.toLocaleString();
     $('#impactNumber').textContent = `${Math.round(kwh / 1000 * 16)} trees`;
 }
 
 function updateOrbit() {
+    if (!$('#orbitAltitude')) return;
     const altitude = Number($('#orbitAltitude').value);
     const velocity = Math.sqrt(398600.4418 / (6371 + altitude));
     $('#orbitOutput').textContent = `${altitude.toLocaleString()} km / ${velocity.toFixed(2)} km/s`;
@@ -35,6 +39,7 @@ function updateOrbit() {
 }
 
 function updateSubnet() {
+    if (!$('#ipAddress')) return;
     const parts = $('#ipAddress').value.split('.').map(Number);
     const prefix = Math.max(0, Math.min(32, Number($('#prefixLength').value) || 0));
     if (parts.length !== 4 || parts.some((part) => Number.isNaN(part) || part < 0 || part > 255)) {
@@ -52,6 +57,7 @@ function updateSubnet() {
 }
 
 function updateInterest() {
+    if (!$('#principal')) return;
     const principal = Number($('#principal').value) || 0;
     const contribution = Number($('#contribution').value) || 0;
     const rate = (Number($('#interestRate').value) || 0) / 100 / 12;
@@ -61,6 +67,7 @@ function updateInterest() {
 }
 
 function updateInflation() {
+    if (!$('#inflationAmount')) return;
     const amount = Number($('#inflationAmount').value) || 0;
     const rate = (Number($('#inflationRate').value) || 0) / 100;
     const years = Number($('#inflationYears').value) || 0;
@@ -68,6 +75,7 @@ function updateInflation() {
 }
 
 function updateMarket() {
+    if (!$('#marketPrice')) return;
     const price = Number($('#marketPrice').value);
     const demand = Math.max(0, 100 - price);
     const supply = price;
@@ -77,6 +85,7 @@ function updateMarket() {
 }
 
 function updateRegex() {
+    if (!$('#regexPattern')) return;
     const result = $('#regexResult');
     try {
         const regex = new RegExp($('#regexPattern').value, $('#regexFlags').value);
@@ -95,13 +104,13 @@ function animateSort() {
 
 const snippets = { js: 'const answer = items.map(item => item.value);', py: 'answer = [item.value for item in items]', rust: 'let answer: Vec<_> = items.iter().map(|item| item.value).collect();', go: 'for _, item := range items { answer = append(answer, item.Value) }' };
 document.querySelectorAll('input, select, textarea').forEach((element) => element.addEventListener('input', () => { updateSolar(); updateBattery(); updateImpact(); updateOrbit(); updateSubnet(); updateInterest(); updateInflation(); updateMarket(); updateRegex(); }));
-document.querySelectorAll('[data-grid-mode]').forEach((button) => button.addEventListener('click', () => { document.querySelectorAll('[data-grid-mode]').forEach((item) => item.classList.remove('is-selected')); button.classList.add('is-selected'); $('#gridAdvice').textContent = button.dataset.gridMode === 'grid' ? 'Best when the grid is reliable and you want simpler maintenance. Batteries can be an optional second step.' : 'Best when outages are common or a connection is unavailable. Add storage and design for your worst week.'; }));
+document.querySelectorAll('[data-grid-mode]').forEach((button) => button.addEventListener('click', () => { document.querySelectorAll('[data-grid-mode]').forEach((item) => item.classList.remove('is-selected')); button.classList.add('is-selected'); if ($('#gridAdvice')) $('#gridAdvice').textContent = button.dataset.gridMode === 'grid' ? 'Best when the grid is reliable and you want simpler maintenance. Batteries can be an optional second step.' : 'Best when outages are common or a connection is unavailable. Add storage and design for your worst week.'; }));
 document.querySelectorAll('[data-layout]').forEach((button) => button.addEventListener('click', () => { document.querySelectorAll('[data-layout]').forEach((item) => item.classList.remove('is-selected')); button.classList.add('is-selected'); $('#layoutDemo').classList.toggle('grid-mode', button.dataset.layout === 'grid'); }));
 document.querySelectorAll('[data-code]').forEach((button) => button.addEventListener('click', () => { document.querySelectorAll('[data-code]').forEach((item) => item.classList.remove('is-selected')); button.classList.add('is-selected'); $('#codeSnippet').textContent = snippets[button.dataset.code]; }));
-$('#sortButton').addEventListener('click', animateSort);
-$('#copyCode').addEventListener('click', async () => { await navigator.clipboard?.writeText($('#codeSnippet').textContent); $('#copyCode').textContent = 'Copied'; setTimeout(() => { $('#copyCode').textContent = 'Copy snippet'; }, 1200); });
+if ($('#sortButton')) $('#sortButton').addEventListener('click', animateSort);
+if ($('#copyCode')) $('#copyCode').addEventListener('click', async () => { await navigator.clipboard?.writeText($('#codeSnippet').textContent); $('#copyCode').textContent = 'Copied'; setTimeout(() => { $('#copyCode').textContent = 'Copy snippet'; }, 1200); });
 const ports = [['SSH', 22, 'remote shell'], ['DNS', 53, 'name resolution'], ['HTTP', 80, 'web traffic'], ['HTTPS', 443, 'encrypted web'], ['FTP', 21, 'file transfer'], ['SMTP', 25, 'mail sending'], ['NTP', 123, 'time sync']];
-function renderPorts() { const query = $('#portSearch').value.toLowerCase(); $('#portList').innerHTML = ports.filter(([name, port, use]) => `${name} ${port} ${use}`.toLowerCase().includes(query)).map(([name, port, use]) => `<div class="port-row"><b>${name}</b><span>${port}</span><small>${use}</small></div>`).join(''); }
-$('#portSearch').addEventListener('input', renderPorts);
-const initialBars = [58, 34, 80, 44, 68, 27, 91, 49, 73, 39]; $('#sortBars').innerHTML = initialBars.map((height) => `<span style="height:${height}%"></span>`).join('');
+function renderPorts() { if (!$('#portSearch')) return; const query = $('#portSearch').value.toLowerCase(); $('#portList').innerHTML = ports.filter(([name, port, use]) => `${name} ${port} ${use}`.toLowerCase().includes(query)).map(([name, port, use]) => `<div class="port-row"><b>${name}</b><span>${port}</span><small>${use}</small></div>`).join(''); }
+if ($('#portSearch')) $('#portSearch').addEventListener('input', renderPorts);
+const initialBars = [58, 34, 80, 44, 68, 27, 91, 49, 73, 39]; if ($('#sortBars')) $('#sortBars').innerHTML = initialBars.map((height) => `<span style="height:${height}%"></span>`).join('');
 updateSolar(); updateBattery(); updateImpact(); updateOrbit(); updateSubnet(); updateInterest(); updateInflation(); updateMarket(); updateRegex(); renderPorts();

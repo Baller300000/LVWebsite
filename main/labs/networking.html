@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Networking Lab - LVWebsite</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <script src="../../assets/scripts/labs.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h3><a href="./index.html">Labs</a><a href="../../index.html">Home</a><a href="../about-me/about-me.html">About
+                Me</a><a href="../contact/contactform.html">Contact</a></h3>
+    </nav>
+    <main class="labs-shell lab-workshop">
+        <header class="workshop-header">
+            <p class="eyebrow">04 / CONNECTIONS</p>
+            <h1>Computer<br><em>networking</em></h1>
+            <p>Understand what happens between a device, a packet, and the thing you meant to reach.</p>
+        </header>
+        <div class="tool-grid">
+            <article class="lab-card lab-card-wide">
+                <div class="card-kicker">IPV4 TOOL</div>
+                <h3>Subnet mask calculator</h3>
+                <div class="input-grid"><label>IPv4 address <input id="ipAddress"
+                            value="192.168.1.0"></label><label>Prefix length <input id="prefixLength" type="number"
+                            value="24" min="0" max="32"></label></div>
+                <div class="result-strip"><strong id="subnetResult">Network: 192.168.1.0</strong><span
+                        id="subnetDetail">254 usable hosts</span></div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">REFERENCE</div>
+                <h3>Common ports</h3><input id="portSearch" placeholder="Search SSH, HTTPS..."
+                    aria-label="Search common ports">
+                <div class="port-list" id="portList"></div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">OSI MODEL</div>
+                <h3>Seven layers, quickly</h3>
+                <ol class="osi-list">
+                    <li><b>Application</b> HTTP, DNS</li>
+                    <li><b>Transport</b> TCP, UDP</li>
+                    <li><b>Network</b> IP, routing</li>
+                    <li><b>Link</b> Ethernet, Wi-Fi</li>
+                </ol>
+            </article>
+        </div>
+        <div class="topic-list">
+            <article><strong>Packet capture simulator</strong><span>Walk through a TCP handshake.</span></article>
+            <article><strong>DNS resolution flowchart</strong><span>From URL to browser render.</span></article>
+            <article><strong>Homelab plans</strong><span>VLANs, firewalls, and NAS storage.</span></article>
+            <article><strong>IPv4 vs IPv6</strong><span>Exhaustion, headers, and routing.</span></article>
+            <article><strong>VPN & tunneling</strong><span>WireGuard, OpenVPN, and IPSec.</span></article>
+            <article><strong>Troubleshooting toolkit</strong><span>Ping, traceroute, nslookup, cable.</span></article>
+        </div>
+    </main>
+    <footer class="site-footer labs-footer">
+        <p><a href="./index.html">Back to all labs</a></p>
+    </footer>
+</body>
+
+</html>

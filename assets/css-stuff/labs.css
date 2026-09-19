@@ -6,6 +6,101 @@ body {
     width: min(1180px, calc(100% - 48px));
 }
 
+.labs-directory {
+    padding-bottom: 90px;
+}
+
+.lab-directory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.lab-directory-card {
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px;
+    border: 1px solid var(--line);
+    background: var(--cream);
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.lab-directory-card:hover,
+.lab-directory-card:focus-visible {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 28px rgba(22, 35, 38, .13);
+}
+
+.lab-directory-card strong {
+    margin: 14px 0 8px;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: .95;
+}
+
+.lab-directory-card>span:not(.card-kicker) {
+    max-width: 330px;
+    color: rgba(22, 35, 38, .68);
+}
+
+.lab-directory-card b {
+    align-self: flex-start;
+    margin-top: 24px;
+    color: var(--teal);
+    font-size: .78rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.solar-card {
+    background: #f7e4b4;
+}
+
+.space-card {
+    background: #d9e5ee;
+}
+
+.code-card {
+    background: #d9e9dc;
+}
+
+.network-card {
+    background: #e1dfef;
+}
+
+.economy-card {
+    background: #f0d8c9;
+}
+
+.lab-workshop {
+    padding-bottom: 30px;
+}
+
+.workshop-header {
+    max-width: 800px;
+    padding: 82px 0 64px;
+}
+
+.workshop-header h1 {
+    margin: 0 0 22px;
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: .88;
+}
+
+.workshop-header h1 em {
+    color: var(--coral);
+}
+
+.workshop-header>p:not(.eyebrow) {
+    max-width: 600px;
+    color: rgba(22, 35, 38, .72);
+    font-size: 1.12rem;
+}
+
 .labs-hero {
     padding: 92px 0 72px;
     max-width: 850px;
@@ -422,11 +517,20 @@ output {
         font-size: clamp(3.6rem, 17vw, 6rem);
     }
 
+    .workshop-header {
+        padding: 62px 0 52px;
+    }
+
+    .workshop-header h1 {
+        font-size: clamp(3.6rem, 17vw, 6rem);
+    }
+
     .labs-meta {
         flex-wrap: wrap;
     }
 
-    .tool-grid {
+    .tool-grid,
+    .lab-directory-grid {
         grid-template-columns: 1fr;
     }
 

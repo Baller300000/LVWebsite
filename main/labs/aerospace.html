@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aerospace Lab - LVWebsite</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <script src="../../assets/scripts/labs.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h3><a href="./index.html">Labs</a><a href="../../index.html">Home</a><a href="../about-me/about-me.html">About
+                Me</a><a href="../contact/contactform.html">Contact</a></h3>
+    </nav>
+    <main class="labs-shell lab-workshop">
+        <header class="workshop-header">
+            <p class="eyebrow">02 / UPWARD</p>
+            <h1>Aerospace<br><em>engineering</em></h1>
+            <p>Orbit, propulsion, materials, and the systems thinking behind leaving the ground.</p>
+        </header>
+        <div class="tool-grid">
+            <article class="lab-card lab-card-wide">
+                <div class="card-kicker">ORBIT SANDBOX</div>
+                <h3>Orbital velocity</h3>
+                <p>See how altitude changes circular orbital velocity around Earth.</p><label>Altitude <input
+                        id="orbitAltitude" type="range" min="200" max="36000" step="100" value="400"><output
+                        id="orbitOutput">400 km / 7.67 km/s</output></label>
+                <div class="orbit-track"><span id="orbitDot"></span></div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">PROPULSION</div>
+                <h3>Engine matrix</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Isp</th>
+                            <th>Strength</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Solid</td>
+                            <td>200-300 s</td>
+                            <td>Simple</td>
+                        </tr>
+                        <tr>
+                            <td>Liquid</td>
+                            <td>300-465 s</td>
+                            <td>Control</td>
+                        </tr>
+                        <tr>
+                            <td>Ion</td>
+                            <td>1,000+ s</td>
+                            <td>Efficient</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">CHECKLIST</div>
+                <h3>CubeSat design</h3>
+                <ul class="check-list">
+                    <li>Mass and center of gravity</li>
+                    <li>Power and battery margin</li>
+                    <li>Radio link and ground station</li>
+                    <li>Thermal and deployment tests</li>
+                </ul>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">MATERIALS</div>
+                <h3>Aviation vs space</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Titanium</td>
+                            <td>Strong and light</td>
+                        </tr>
+                        <tr>
+                            <td>Carbon fiber</td>
+                            <td>Stiff per gram</td>
+                        </tr>
+                        <tr>
+                            <td>Inconel</td>
+                            <td>Handles heat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+        <div class="topic-list">
+            <article><strong>Launch calendar</strong><span>NASA, ESA, SpaceX, and Rocket Lab missions.</span></article>
+            <article><strong>Re-entry breakdown</strong><span>Thermal protection, plasma, and heat.</span></article>
+            <article><strong>Mission timelines</strong><span>Apollo 11 and Voyager retrospectives.</span></article>
+            <article><strong>Mars blueprint</strong><span>Life support, radiation, and local resources.</span></article>
+            <article><strong>Supersonic primer</strong><span>Shockwaves, sonic booms, and Mach flight.</span></article>
+            <article><strong>Drone aerodynamics</strong><span>Lift, drag, rotors, and autonomy.</span></article>
+        </div>
+    </main>
+    <footer class="site-footer labs-footer">
+        <p><a href="./index.html">Back to all labs</a></p>
+    </footer>
+</body>
+
+</html>

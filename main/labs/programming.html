@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Programming Lab - LVWebsite</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <script src="../../assets/scripts/labs.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h3><a href="./index.html">Labs</a><a href="../../index.html">Home</a><a href="../about-me/about-me.html">About
+                Me</a><a href="../contact/contactform.html">Contact</a></h3>
+    </nav>
+    <main class="labs-shell lab-workshop">
+        <header class="workshop-header">
+            <p class="eyebrow">03 / LOGIC</p>
+            <h1>Computer<br><em>programming</em></h1>
+            <p>Small playgrounds for patterns, algorithms, syntax, and the parts of software that are easiest to
+                understand by trying.</p>
+        </header>
+        <div class="tool-grid">
+            <article class="lab-card lab-card-wide">
+                <div class="card-kicker">REGEX DEBUGGER</div>
+                <h3>Pattern tester</h3>
+                <p>Test a pattern against a sample string.</p>
+                <div class="input-grid"><label>Pattern <input id="regexPattern" value="\b(cat|car)\b"
+                            spellcheck="false"></label><label>Flags <input id="regexFlags" value="gi" maxlength="5"
+                            spellcheck="false"></label></div><textarea id="regexText"
+                    rows="3">The cat found a car. A caterpillar stayed home.</textarea>
+                <div class="regex-result" id="regexResult">Matches appear here.</div>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">ALGORITHM</div>
+                <h3>Sorting, in motion</h3>
+                <div class="bar-chart" id="sortBars"></div><button id="sortButton">Animate merge sort</button>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">CHEAT SHEET</div>
+                <h3>Syntax drawer</h3>
+                <div class="code-tabs"><button data-code="js" class="is-selected">JS</button><button
+                        data-code="py">Python</button><button data-code="rust">Rust</button><button
+                        data-code="go">Go</button></div>
+                <pre id="codeSnippet">const answer = items.map(item =&gt; item.value);</pre><button class="copy-button"
+                    id="copyCode">Copy snippet</button>
+            </article>
+            <article class="lab-card">
+                <div class="card-kicker">LAYOUT LAB</div>
+                <h3>Flexbox & Grid</h3>
+                <div class="layout-demo" id="layoutDemo"><span>1</span><span>2</span><span>3</span></div>
+                <div class="segmented"><button data-layout="flex" class="is-selected">Flex</button><button
+                        data-layout="grid">Grid</button></div>
+            </article>
+        </div>
+        <div class="topic-list">
+            <article><strong>API testing playground</strong><span>Mock JSON, async requests, and errors.</span>
+            </article>
+            <article><strong>Git Git-Good guide</strong><span>Branches, merges, rebases, and conflicts.</span></article>
+            <article><strong>Daily challenge</strong><span>One small logic problem each day.</span></article>
+            <article><strong>Framework comparison</strong><span>React, Vue, and Svelte trade-offs.</span></article>
+            <article><strong>Open-source directory</strong><span>Beginner-friendly good-first issues.</span></article>
+            <article><strong>Code performance bench</strong><span>Compare snippets with repeatable timing.</span>
+            </article>
+        </div>
+    </main>
+    <footer class="site-footer labs-footer">
+        <p><a href="./index.html">Back to all labs</a></p>
+    </footer>
+</body>
+
+</html>
