@@ -34,21 +34,25 @@
         </h3>
     </nav>
     <hr>
-    <h1>Guestbook</h1>
-    <h2>Leave a comment below!<br>
-        It might take a while for me to check and add them here!</h2>
+    <header class="page-intro">
+        <p class="eyebrow">THE VISITOR LOG</p>
+        <h1>Guestbook</h1>
+        <p>Leave a comment below. It might take a little while for me to check and add entries here.</p>
+    </header>
     <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="bdf85566-7212-4a1c-a681-248548c2d43a">
         <label for="name">Name:</label>
-        <input type="text" name="name" required>
+        <input id="name" type="text" name="name" required>
         <label for="email">Email:</label>
-        <input type="email" name="email" required>
+        <input id="email" type="email" name="email" required>
         <label for="message">Message:</label>
-        <textarea name="message" required></textarea>
+        <textarea id="message" name="message" required></textarea>
         <button type="submit">Submit Form</button>
     </form>
-    <h2>Previous Entries:</h2>
-    <h3>None yet...</h3>
+    <section class="content-panel narrow">
+        <h2>Previous entries</h2>
+        <p>None yet. You could be the first.</p>
+    </section>
 </body>
 
 </html>

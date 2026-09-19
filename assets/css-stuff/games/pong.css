@@ -1,16 +1,21 @@
 body {
-    background: black;
+    background: #162326;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 18px;
     margin: 0;
 }
 
 canvas {
-    border: 2px solid white;
+    max-width: calc(100% - 32px);
+    height: auto;
+    border: 1px solid #f3efe7;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .25);
 }
 
 a {
-    color: white
+    color: #fffaf1;
 }

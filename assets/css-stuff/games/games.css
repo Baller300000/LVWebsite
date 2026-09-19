@@ -1,46 +1,27 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
-}
+@import url("../normal.css");
 
 body {
-    background: rgb(237, 173, 55) repeat center center fixed;
-    background-size: auto;
+    background: var(--paper);
     text-align: center;
-    font-family: monospace;
-    font-size: x-large;
 }
 
 canvas {
-    border: 2px solid #222;
+    max-width: calc(100% - 32px);
+    height: auto;
+    border: 1px solid var(--ink);
     display: block;
-    margin: 0 auto;
-    background: rgb(237, 173, 55);
+    margin: 28px auto;
+    background: var(--cream);
+    box-shadow: 0 14px 30px rgba(22, 35, 38, .14);
 }
 
 button {
-    margin-top: 10px;
-    padding: 6px 12px;
+    margin: 18px 0 0;
+    padding: 10px 18px;
 }
 
-hr {
-    border: none;
-    height: 6px;
-    background: rgb(127.5, 127.5, 127.5);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav img {
-    width: 64px;
-    height: 64px;
-    vertical-align: middle;
+.game-score {
+    display: inline-block;
+    margin-left: 14px;
+    font-weight: 700;
 }

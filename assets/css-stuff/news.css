@@ -1,65 +1,95 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
-}
+@import url("./normal.css");
 
 body {
-    background: rgb(237, 173, 55) repeat center center fixed;
-    background-size: auto;
-    color: white;
-    text-shadow: 1px 1px 3px black;
-    font-family: monospace;
-    font-size: x-large;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
+    background: var(--paper);
 }
 
-select {
-    margin-bottom: 20px;
-    padding: 5px;
-    font-size: 16px;
+body>h1,
+body>h2,
+body>label,
+body>select,
+#news-feed {
+    width: min(820px, calc(100% - 48px));
+    margin-right: auto;
+    margin-left: auto;
 }
 
-article {
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 10px;
+body>h1 {
+    margin-top: 88px;
 }
 
-h3 {
-    margin: 0;
+body>label {
+    display: block;
+    margin-top: 36px;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
-small {
-    color: #ddd;
+body>select {
+    margin-top: 8px;
 }
 
-hr {
-    border: none;
-    height: 6px;
-    background: rgb(127.5, 127.5, 127.5);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav img {
-    width: 64px;
-    height: 64px;
-    vertical-align: middle;
-}
-
-ul {
-    list-style-position: inside;
-    text-align: center;
+.news-directory {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: min(820px, calc(100% - 48px));
+    margin: 28px auto 80px;
     padding: 0;
+    list-style: none;
+}
+
+.news-directory li {
+    border-top: 2px solid var(--ink);
+    padding: 18px 0;
+}
+
+.news-directory a {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.news-directory span {
+    color: var(--coral);
+}
+
+#news-feed {
+    margin-top: 26px;
+}
+
+#news-feed article {
+    margin-bottom: 0;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+#news-feed h3 {
+    margin-bottom: 8px;
+    font-family: var(--serif);
+    font-size: 1.45rem;
+}
+
+#news-feed small {
+    color: rgba(22, 35, 38, .62);
+}
+
+@media (max-width: 700px) {
+
+    body>h1,
+    body>h2,
+    body>label,
+    body>select,
+    #news-feed {
+        width: calc(100% - 32px);
+    }
+
+    .news-directory {
+        grid-template-columns: 1fr;
+        width: calc(100% - 32px);
+    }
 }
