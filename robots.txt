@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /main/sankey/
+
+Sitemap: https://lvwebsite.com/sitemap.xml
