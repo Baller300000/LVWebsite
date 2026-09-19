@@ -1,6 +1,21 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+/main/labs/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/main/games/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/scripts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer-when-downgrade

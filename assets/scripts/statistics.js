@@ -1,8 +1,18 @@
 (function (w, d) {
-    var s = d.createElement('script');
-    d.getElementsByTagName('script')[0].parentNode.appendChild(s);
-    s.setAttribute('data-statinside-id', 37);
-    s.src = 'https://statinside.com/counter.js';
     w._siData = w._siData || [];
-    w.statInside = function () { _siData.push(arguments); }
+    w.statInside = function () { w._siData.push(arguments); };
+
+    function loadAnalytics() {
+        var script = d.createElement('script');
+        script.async = true;
+        script.setAttribute('data-statinside-id', 37);
+        script.src = 'https://statinside.com/counter.js';
+        d.head.appendChild(script);
+    }
+
+    if ('requestIdleCallback' in w) {
+        w.requestIdleCallback(loadAnalytics, { timeout: 3000 });
+    } else {
+        w.setTimeout(loadAnalytics, 2000);
+    }
 })(window, document);
