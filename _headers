@@ -19,5 +19,9 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer-when-downgrade
-  Permissions-Policy: interest-cohort=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  AI-Train: yes
+  AI-Input: yes
+  Search: yes
+  Cache-Control: public, max-age=3600, stale-while-revalidate=60
+  X-Robots-Tag: index, follow, max-snippet:-1
