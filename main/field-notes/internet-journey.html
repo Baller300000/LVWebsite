@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Follow a web request from a typed URL through DNS, routers, encrypted connections, a server, and the browser's rendering process.">
+    <title>A Web Request Takes a Little Journey - Field Notes</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css?v=20261011">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/field-notes.css">
+</head>
+
+<body>
+    <nav><h3><a href="./index.html">Field Notes</a><a href="../labs/networking.html">Networking Lab</a><a href="../../index.html">Home</a></h3></nav>
+    <main class="labs-shell field-note-article">
+        <header class="workshop-header">
+            <p class="eyebrow">04 / NETWORKS IN MOTION</p>
+            <h1>A web request<br><em>takes a little journey.</em></h1>
+            <p>Typing a website's name feels like one action. Underneath, your device asks a chain of questions, sends packets through several networks, and assembles a response into a page.</p>
+        </header>
+        <section id="name">
+            <p class="section-label">FIRST / FIND THE ADDRESS</p>
+            <h2>DNS looks up a name.</h2>
+            <p>A computer sends data using numeric IP addresses, while people prefer names such as <code>lvwebsite.com</code>. The Domain Name System (DNS) helps translate a name into the records needed to reach a service. Your browser, operating system, home router, or DNS provider may already have a cached answer, so a lookup is not necessarily repeated for every visit.</p>
+            <p>The answer can depend on the type of record requested, the resolver, caching, and how a site distributes traffic. DNS helps find an endpoint; it does not prove the endpoint is trustworthy or encrypt the content by itself.</p>
+        </section>
+        <section id="packets">
+            <p class="section-label">NEXT / MOVE PACKETS</p>
+            <h2>Routers pass traffic between networks.</h2>
+            <p>Your device checks whether the destination is on the local network. If not, it sends packets to a gateway—usually your router—which forwards them toward the internet service provider. Networks exchange routing information to decide where traffic should go next. The path can cross many independent networks, and the route taken may change over time.</p>
+            <p>Packets are pieces of data with addressing and control information. They may take different paths and be reassembled at the destination. The home Wi-Fi link is only the first hop; a perfect Wi-Fi signal cannot fix a distant server outage or an upstream routing problem.</p>
+        </section>
+        <section id="https">
+            <p class="section-label">THEN / ESTABLISH THE SESSION</p>
+            <h2>HTTPS protects the conversation in transit.</h2>
+            <p>For an HTTPS connection, the browser and server negotiate encrypted transport and check a certificate to authenticate the server name. Modern HTTPS commonly uses TLS over TCP, while HTTP/3 uses QUIC over UDP. The precise details depend on the browser, server, and network.</p>
+            <p>Encryption helps prevent intermediaries from reading or changing the protected content in transit, but it does not make a website automatically safe. It cannot tell whether you chose a misleading site, whether an account is secure, or what the service does with data after it receives it. Check the hostname and use good account security as well.</p>
+        </section>
+        <section id="page">
+            <p class="section-label">FINALLY / BUILD THE PAGE</p>
+            <h2>The response becomes pixels.</h2>
+            <p>The browser sends an HTTP request. A web server or application returns a response that might include HTML, stylesheets, scripts, images, and other resources. The browser parses the HTML, requests referenced files, applies styles, runs scripts, lays out elements, and paints the visible result. A page may make many requests, and caching can reduce the work on later visits.</p>
+            <p>When something fails, locate the stage: Does the hostname resolve? Can other sites load? Is the server responding? Does only one file fail? Browser developer tools can show request status, timing, and console errors. On a local network, basic tools such as <code>ping</code>, <code>tracert</code>/<code>traceroute</code>, and <code>nslookup</code> can add clues, though firewalls may block some probes.</p>
+            <div class="field-note-callout"><p>Want to explore addresses and ports? Open the <a href="../labs/networking.html">Networking Lab</a>, then continue with the guide to <a href="./home-network.html">understanding a home network</a>.</p></div>
+        </section>
+        <div class="field-note-next"><a href="./index.html">← All Field Notes</a><a href="./home-network.html">Next: Home networks →</a></div>
+    </main>
+    <footer class="site-footer labs-footer"><p>A simplified mental model: real networks use more protocols, caches, and intermediaries than one short guide can cover.</p></footer>
+</body>
+
+</html>

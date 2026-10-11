@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lvwebsite.com/</loc><lastmod>2026-09-19</lastmod><priority>1.0</priority></url>
+  <url><loc>https://lvwebsite.com/</loc><lastmod>2026-10-11</lastmod><priority>1.0</priority></url>
   <url><loc>https://lvwebsite.com/main/now.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://lvwebsite.com/main/roadmap.html</loc><lastmod>2026-09-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://lvwebsite.com/main/uses.html</loc><lastmod>2026-09-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://lvwebsite.com/main/about-me/about-me.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://lvwebsite.com/main/about-me/discord.html</loc><lastmod>2026-09-19</lastmod><priority>0.5</priority></url>
-  <url><loc>https://lvwebsite.com/main/devlog/devlog.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://lvwebsite.com/main/labs/index.html</loc><lastmod>2026-09-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://lvwebsite.com/main/devlog/devlog.html</loc><lastmod>2026-10-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/index.html</loc><lastmod>2026-10-11</lastmod><priority>0.9</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/solar-energy.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/rooftop-solar.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/battery-storage.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/internet-journey.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/home-network.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/learn-programming.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/orbital-motion.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+  <url><loc>https://lvwebsite.com/main/field-notes/compound-interest.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://lvwebsite.com/main/labs/solar.html</loc><lastmod>2026-09-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://lvwebsite.com/main/labs/aerospace.html</loc><lastmod>2026-09-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://lvwebsite.com/main/labs/programming.html</loc><lastmod>2026-09-19</lastmod><priority>0.7</priority></url>

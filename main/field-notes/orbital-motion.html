@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A plain-language guide to orbital motion: gravity, sideways velocity, orbital speed, periods, and why satellites are still pulled by Earth.">
+    <title>Why Satellites Stay in Orbit - Field Notes</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css?v=20261011">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/field-notes.css">
+</head>
+
+<body>
+    <nav><h3><a href="./index.html">Field Notes</a><a href="../labs/aerospace.html">Aerospace Lab</a><a href="../../index.html">Home</a></h3></nav>
+    <main class="labs-shell field-note-article">
+        <header class="workshop-header">
+            <p class="eyebrow">07 / SPACEFLIGHT BASICS</p>
+            <h1>Why satellites<br><em>stay in orbit.</em></h1>
+            <p>An orbit is not a place where gravity disappeared. It is a continuing fall in which sideways motion keeps carrying the spacecraft past the ground.</p>
+        </header>
+        <section id="falling">
+            <p class="section-label">THE CANNONBALL PICTURE</p>
+            <h2>Fall around the planet, not into it.</h2>
+            <p>Imagine throwing a ball horizontally. Gravity bends its path downward, and the ball hits the ground. Throw it faster and it travels farther before hitting. If it is high enough and moving fast enough sideways, the surface curves away beneath it at about the same rate that gravity bends its path. The ball keeps falling, but never reaches the ground: that is the simple picture of an orbit.</p>
+            <p>Real launch vehicles do not fire a cannonball straight from the surface. They climb through the atmosphere and build substantial horizontal speed. A rocket must provide enough energy to reach the desired trajectory, and atmospheric drag, staging, navigation, and the target orbit all shape the flight.</p>
+        </section>
+        <section id="speed">
+            <p class="section-label">CIRCULAR ORBIT / A USEFUL APPROXIMATION</p>
+            <h2>Closer circular orbits need more speed.</h2>
+            <p>For a circular orbit around a spherical body, gravity supplies the centripetal acceleration needed to keep turning the spacecraft. The approximate orbital speed is the square root of the body's gravitational parameter divided by the distance from its center. The distance is center-to-spacecraft, not altitude above the ground.</p>
+            <span class="field-note-equation">circular speed: v = √(μ / r)</span>
+            <p>Here μ is the gravitational parameter of the central body and r is orbital radius. The equation assumes an ideal circular orbit around one dominant body. It is a starting point, not a launch calculator. Higher circular orbits have lower orbital speed, but getting from one orbit to another requires changing energy and trajectory.</p>
+        </section>
+        <section id="period">
+            <p class="section-label">TIME / HOW LONG A LOOP TAKES</p>
+            <h2>Higher circular orbits take longer.</h2>
+            <p>For an ideal circular orbit, the period—the time for one loop—is related to orbital radius: farther orbits take longer. This is why low-orbit spacecraft circle Earth many times per day, while a much higher orbit has a longer period. Earth rotates beneath an orbiting spacecraft too, so the ground track and apparent position also depend on the orbit's orientation.</p>
+            <p>A geostationary satellite is not simply “parked in space.” It follows a circular orbit above the equator with a period matching Earth's rotation, in the same direction, so it appears over roughly the same longitude. A geosynchronous orbit has a matching period but can have an inclined or elliptical shape, and therefore need not remain fixed in the sky.</p>
+        </section>
+        <section id="real-world">
+            <p class="section-label">REAL ORBITS / REAL DISTURBANCES</p>
+            <h2>Most useful orbits need maintenance.</h2>
+            <p>Earth's atmosphere extends thinly into low orbit and gradually slows spacecraft. Earth's uneven gravity, the Moon and Sun, and solar radiation pressure can also change an orbit. Mission planners account for these effects, track objects, and sometimes use propulsion for corrections. Without enough control authority or fuel, an orbit may drift or decay.</p>
+            <p>Different missions choose different orbital shapes and inclinations. Earth observation often values repeated coverage of the surface; communications may favor long visibility from a region; scientific missions may choose a path that enables a particular measurement. There is no universally best orbit—the orbit is a trade-off selected for the mission.</p>
+            <div class="field-note-callout"><p>Explore propulsion, CubeSats, and mission ideas in the <a href="../labs/aerospace.html">Aerospace Engineering Lab</a>.</p></div>
+        </section>
+        <div class="field-note-next"><a href="./learn-programming.html">← Learning to program</a><a href="./compound-interest.html">Next: Compound interest →</a></div>
+    </main>
+    <footer class="site-footer labs-footer"><p>Introductory orbital mechanics only. Mission analysis requires detailed models and precise reference frames.</p></footer>
+</body>
+
+</html>

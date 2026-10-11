@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A practical introduction to solar electricity: power, energy, sunlight, panel estimates, and the assumptions behind them.">
+    <title>Solar Energy, Without the Magic - Field Notes</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css?v=20261011">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/field-notes.css">
+</head>
+
+<body>
+    <nav><h3><a href="./index.html">Field Notes</a><a href="../labs/solar.html">Solar Lab</a><a href="../../index.html">Home</a></h3></nav>
+    <main class="labs-shell field-note-article">
+        <header class="workshop-header">
+            <p class="eyebrow">01 / ENERGY FOUNDATIONS</p>
+            <h1>Solar energy,<br><em>without the magic.</em></h1>
+            <p>A panel is not a tiny battery or a miracle box. It is a device that turns part of the sunlight arriving on it into electrical power. Start with that, and the estimates get much easier to read.</p>
+        </header>
+        <section id="power-energy">
+            <p class="section-label">THE TWO WORDS THAT MATTER</p>
+            <h2>Power is a rate. Energy is an amount.</h2>
+            <p>Power describes how quickly electricity is being produced or used. It is measured in watts (W) or kilowatts (kW). Energy is power accumulated over time, commonly measured in watt-hours (Wh) or kilowatt-hours (kWh). A 1,000-watt appliance running for one hour uses 1 kWh. If it runs for ten minutes, it uses about 0.17 kWh.</p>
+            <p>This distinction explains why a panel's nameplate rating and its daily output are different numbers. A panel marked 400 W can produce 400 W only under specified test conditions, not all day. Sun angle, clouds, heat, shade, inverter behavior, and wiring losses all shift the real output.</p>
+            <span class="field-note-equation">energy (kWh) = average power (kW) × time (hours)</span>
+        </section>
+        <section id="estimate">
+            <p class="section-label">A FIRST ESTIMATE</p>
+            <h2>Use peak-sun-hours carefully.</h2>
+            <p>“Peak sun hours” are a convenient way to express the day's sunlight as an equivalent number of hours at a standard strong irradiance. Four peak-sun-hours does not mean the Sun was overhead for four clock hours; it means the day's total solar energy is roughly equivalent to four hours at the reference level.</p>
+            <p>A rough daily estimate is installed array power multiplied by local peak-sun-hours, then multiplied by a performance factor to allow for losses. For example, a 4 kW array, 4 peak-sun-hours, and an illustrative 0.8 performance factor gives about 12.8 kWh for that day. The factor is not universal: equipment, temperature, orientation, shading, and system design change it.</p>
+            <div class="field-note-callout"><p><strong>Try it:</strong> Change the array size or sunlight assumption in the <a href="../labs/solar.html">Solar Energy Lab</a>. Treat the result as a planning estimate, not a promise or a quote.</p></div>
+        </section>
+        <section id="components">
+            <p class="section-label">THE SYSTEM AROUND THE PANEL</p>
+            <h2>Panels are one part of a chain.</h2>
+            <p>Photovoltaic cells produce direct-current (DC) electricity. An inverter converts that electricity into alternating current (AC) for ordinary household circuits or a grid connection. Mounting hardware holds the modules in place, while conductors, disconnects, protective equipment, and monitoring complete the installation.</p>
+            <p>Some systems add a battery and a device that can safely isolate selected circuits during an outage. A standard grid-connected inverter generally shuts down when the utility grid is down, even if the Sun is shining: this protects workers repairing the network. Backup requires equipment specifically designed and approved for that mode.</p>
+        </section>
+        <section id="tradeoffs">
+            <p class="section-label">READ THE WHOLE PICTURE</p>
+            <h2>Annual energy is not the same as independence.</h2>
+            <p>A rooftop system can produce as much energy over a year as a home consumes and still import power at night or during a cloudy week. Timing matters. So do local export rules, retail electricity prices, connection fees, and seasonal variation. A bill credit for exported energy may be worth less than the price paid for imported energy.</p>
+            <p>To compare designs, ask for the assumed annual production, monthly seasonal profile, estimated losses, equipment warranties, and the exact export tariff used in the financial model. Read the <a href="./rooftop-solar.html">roof-readiness checklist</a> before comparing quotes, and the <a href="./battery-storage.html">battery guide</a> before treating storage as an automatic upgrade.</p>
+        </section>
+        <div class="field-note-next"><a href="./index.html">← All Field Notes</a><a href="./rooftop-solar.html">Next: Rooftop solar checklist →</a></div>
+    </main>
+    <footer class="site-footer labs-footer"><p>Educational overview only. Equipment selection and installation require local code compliance and qualified professionals.</p></footer>
+</body>
+
+</html>

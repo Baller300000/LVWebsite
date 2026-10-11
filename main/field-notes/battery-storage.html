@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Understand home battery capacity, output power, usable energy, efficiency, backup circuits, and the practical limits of energy storage.">
+    <title>What a Home Battery Can Do - Field Notes</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css?v=20261011">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/field-notes.css">
+</head>
+
+<body>
+    <nav><h3><a href="./index.html">Field Notes</a><a href="../labs/solar.html">Solar Lab</a><a href="../../index.html">Home</a></h3></nav>
+    <main class="labs-shell field-note-article">
+        <header class="workshop-header">
+            <p class="eyebrow">03 / ENERGY STORAGE</p>
+            <h1>What a home battery<br><em>can (and cannot) do.</em></h1>
+            <p>A battery shifts some electricity from one time to another. It does not create energy, and a large capacity number alone does not tell you what the system can run.</p>
+        </header>
+        <section id="capacity">
+            <p class="section-label">CAPACITY / HOW MUCH ENERGY</p>
+            <h2>Usable kWh is the size of the tank.</h2>
+            <p>Battery capacity is commonly stated in kilowatt-hours. A 10 kWh usable battery could, in an idealized calculation, run a 1 kW load for ten hours. Real systems have conversion losses, reserve settings, and operating limits, so the actual usable energy at an AC outlet is lower than the arithmetic maximum.</p>
+            <p>Some products quote total capacity, others emphasize usable capacity. Check both the usable value at commissioning and how the manufacturer defines it. Also ask how capacity changes with temperature, operating limits, age, and warranty conditions.</p>
+        </section>
+        <section id="power">
+            <p class="section-label">POWER / HOW FAST</p>
+            <h2>kW answers a different question.</h2>
+            <p>Power rating tells you how quickly a battery system can deliver energy. A battery may store plenty of kWh yet have a lower continuous output limit than a large appliance needs. Starting a motor can briefly require more power than keeping it running. The inverter may also impose separate surge and continuous limits.</p>
+            <p>List the loads that matter during an outage—perhaps refrigeration, lights, networking equipment, and selected outlets—then note their running power and any startup surges. Essential-load panels are often a more practical backup strategy than attempting to power every circuit in a house.</p>
+            <span class="field-note-equation">ideal runtime (hours) ≈ usable energy (kWh) ÷ average load (kW)</span>
+        </section>
+        <section id="backup">
+            <p class="section-label">OUTAGES / SYSTEM DESIGN</p>
+            <h2>Backup is a feature of the system, not just the cell.</h2>
+            <p>A grid-connected solar inverter commonly turns off when the grid fails, for worker safety. To use solar or a battery during an outage, a system needs approved equipment that can isolate the home from the utility and form a local electrical supply. Some systems back up only chosen circuits. Others may have different limits on power, phase, or motor loads.</p>
+            <p>Ask how the system detects an outage, which circuits remain live, whether solar can recharge the battery while islanded, and how long the specified loads might last under a realistic cloudy-day scenario. Backup duration is not a fixed property: it depends on what is running and whether new energy is available.</p>
+        </section>
+        <section id="tradeoffs">
+            <p class="section-label">LOSSES / COST / CARE</p>
+            <h2>Storage involves trade-offs even before price.</h2>
+            <p>Charging and discharging both lose some energy. A round-trip efficiency figure describes how much of the charging energy is returned under defined conditions; it is not the same as available backup capacity. Cycling the battery can reduce its remaining capacity over time, which is why warranties often describe years, throughput, cycles, or retained capacity.</p>
+            <p>Compare the value you get from shifting solar power or serving critical loads against installed price, maintenance, replacement terms, and local electricity tariffs. Safety is non-negotiable: use listed equipment, follow installation clearances, and rely on a qualified installer who understands local electrical and fire requirements. Never improvise a household battery from loose cells.</p>
+            <div class="field-note-callout"><p>The <a href="../labs/solar.html">Solar Energy Lab</a> has a simple battery-sizing control. For site conditions and grid rules, see the <a href="./rooftop-solar.html">rooftop solar checklist</a>.</p></div>
+        </section>
+        <div class="field-note-next"><a href="./rooftop-solar.html">← Rooftop solar checklist</a><a href="./index.html">All Field Notes →</a></div>
+    </main>
+    <footer class="site-footer labs-footer"><p>Battery and electrical installations can be hazardous; use equipment and professionals approved for your location.</p></footer>
+</body>
+
+</html>

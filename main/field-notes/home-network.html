@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Understand home internet equipment, Wi-Fi and Ethernet, guest networks, router placement, and a step-by-step troubleshooting routine.">
+    <title>Make Sense of Your Home Network - Field Notes</title>
+    <link rel="stylesheet" href="../../assets/css-stuff/normal.css?v=20261011">
+    <link rel="stylesheet" href="../../assets/css-stuff/labs.css">
+    <link rel="stylesheet" href="../../assets/css-stuff/field-notes.css">
+</head>
+
+<body>
+    <nav><h3><a href="./index.html">Field Notes</a><a href="../labs/networking.html">Networking Lab</a><a href="../../index.html">Home</a></h3></nav>
+    <main class="labs-shell field-note-article">
+        <header class="workshop-header">
+            <p class="eyebrow">05 / NETWORKS AT HOME</p>
+            <h1>Make sense of<br><em>your home network.</em></h1>
+            <p>When the internet feels broken, “the Wi-Fi” is often blamed for several different links. Naming the parts makes it easier to find the actual problem.</p>
+        </header>
+        <section id="equipment">
+            <p class="section-label">THE BOXES / THE JOBS</p>
+            <h2>Modem, router, and access point are roles.</h2>
+            <p>A modem or optical network terminal connects your home to the provider's access network. A router moves traffic between networks and commonly provides firewalling, local addresses, and network address translation. A wireless access point provides Wi-Fi. One household box may combine all three; a mesh system may distribute the access-point role across several units.</p>
+            <p>The provider's connection, the router's forwarding, the Wi-Fi radio link, and the device itself are separate possible failure points. A speed test over Wi-Fi measures the whole path under current conditions, not just the speed printed on an internet plan.</p>
+        </section>
+        <section id="wifi">
+            <p class="section-label">WIRELESS / WHERE RADIO MATTERS</p>
+            <h2>Placement can matter more than another bar.</h2>
+            <p>Wi-Fi shares radio spectrum. Walls, floors, metal, distance, neighboring networks, and crowded channels affect performance. Put the access point in an open, reasonably central location rather than inside a cabinet or at the far edge of the home. A wired Ethernet link is usually more predictable for stationary devices such as a desktop, television, or game console.</p>
+            <p>Newer Wi-Fi standards can improve capacity and efficiency, but they do not repeal distance or interference. A device and access point must support compatible bands and features to use them. Mesh nodes also need a usable connection to one another; placing them too far apart can create a fast-looking network that has a weak backhaul.</p>
+        </section>
+        <section id="security">
+            <p class="section-label">SAFETY / SMALL HABITS</p>
+            <h2>Keep the network boringly maintained.</h2>
+            <ul>
+                <li>Change default administrator credentials and use a strong, unique Wi-Fi passphrase.</li>
+                <li>Use current WPA2 or WPA3 security where supported; avoid open networks and obsolete encryption.</li>
+                <li>Install router firmware updates and replace equipment that no longer receives security updates.</li>
+                <li>Use a guest network for visitors or devices that do not need access to your computers and storage.</li>
+                <li>Turn off remote administration if you do not need it, and review connected devices occasionally.</li>
+            </ul>
+            <p>A guest network is useful separation, not a guarantee that every device is harmless. Smart devices still need updates, sensible account settings, and only the permissions they actually need.</p>
+        </section>
+        <section id="troubleshoot">
+            <p class="section-label">WHEN IT BREAKS / CHANGE ONE THING</p>
+            <h2>Follow a small, repeatable checklist.</h2>
+            <ol>
+                <li>Check whether one device or every device is affected.</li>
+                <li>Test one device with Ethernet, if available, to compare the wired path with Wi-Fi.</li>
+                <li>Check the provider's outage page and the equipment's status lights before changing settings.</li>
+                <li>Restart equipment only when appropriate; wait for the connection to come back fully.</li>
+                <li>Record what changed, then test again before adjusting another setting.</li>
+            </ol>
+            <p>If only one device has trouble, inspect that device's Wi-Fi, VPN, DNS, and software. If every device loses the provider connection at once, the issue may be the access line or modem. Keep a note of the time and error messages before contacting support; it makes diagnosis much less mysterious.</p>
+            <div class="field-note-callout"><p>For the wider trip between a typed address and a rendered page, read <a href="./internet-journey.html">A web request takes a little journey</a>. The <a href="../labs/networking.html">Networking Lab</a> has a subnet calculator and common-port reference.</p></div>
+        </section>
+        <div class="field-note-next"><a href="./internet-journey.html">← How a web request travels</a><a href="./index.html">All Field Notes →</a></div>
+    </main>
+    <footer class="site-footer labs-footer"><p>Change router settings cautiously; provider equipment and menus vary by model and service.</p></footer>
+</body>
+
+</html>
